@@ -1,0 +1,557 @@
+<style type="text/css">/* PAGE OVERRIDES */
+    #section-content {
+        overflow: visible;
+    }
+    #region-content {
+        float: right;
+        margin-left: 0;
+        width: 900px;
+    }
+    #region-sidebar-second {
+        float: left;
+        width: unset;
+    }
+    td img {
+        width: unset;
+        min-width: unset;
+        max-width: unset;
+    }
+    @media (min-width: 1025px) {
+        .container-12 .grid-8 {
+            width: unset;
+        }
+    }
+    @media (min-width: 1025px) {
+        .region-content {
+            max-width: unset;
+        }
+    }
+
+/* NEW PAGE STYLES */
+    #roadmap_wrap h2 {
+        margin-top: 1.5em;
+    }
+    #utility {
+        border-top: 1px solid #ddd;
+        margin-top: 4em;
+        padding-top: .75em;
+        text-align: right;
+    }
+    .hover_control {
+        float: right;
+        margin:	-2em 0;
+    }
+    .hover_control img {
+        height: 18px !important;
+        opacity: .5;
+    }
+    .hover_control img.hover_state_off:hover {
+        cursor: pointer;
+        opacity: .7;
+    }
+    .hover_control .hover_state_off {
+        opacity: .2;
+    }
+
+/* TABLE STYLES */
+    #table_wrap table {
+        border-collapse: collapse;
+        margin-left: 3em 0;
+    }
+    #table_wrap th > table {
+        margin: 0;
+    }
+    #table_wrap th > table tr {
+        border-top: none;
+    }
+    #table_wrap th > table td {
+        vertical-align: bottom;
+    }
+    #table_wrap th > table td[colspan] {
+        background: #fff;
+        padding: 0;
+    }
+    #table_wrap th tbody,
+    #table_wrap > table >thead {
+        border: none;
+    }
+    #table_wrap table thead tr th {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+    }
+    #table_wrap table thead tr th h2 {
+        text-transform: none;
+        margin: 1.25em 0 1em 0;
+    }
+    #table_wrap table thead tr th[colspan] {
+        padding: 0;
+    }
+    #table_wrap tbody tr {
+        border-top: 1px solid #ddd;
+    }
+    #table_wrap .opt1, #table_wrap .opt2, #table_wrap .opt3, #table_wrap .opt4 {
+        border-bottom: 2px solid #ccc;
+    }
+    #table_wrap tbody,
+    #table_wrap tbody tr:first-child {
+        border-top: none;
+    }
+
+    /* COLUMNS-4 */
+        #table_wrap.columns-4 td {
+            width: 25%;
+        }
+        #table_wrap.columns-4 td[colspan="2"] {
+            width: 50%;
+        }
+        #table_wrap.columns-4 td[colspan="3"] {
+            width: 75%;
+        }
+        #table_wrap.columns-4 td[colspan="4"] {
+            width: 100%;
+        }
+        #table_wrap.columns-4 td.col1, #table_wrap.columns-4 td.col2, #table_wrap.columns-4 td.col3 {
+            border-right: 1px solid #ddd;
+        }
+        #table_wrap.columns-4 td.col4 {
+            border-right: none;
+        }
+
+    /* COLUMNS-3 */
+        #table_wrap.columns-3 td {
+            width: 33.333%;
+        }
+        #table_wrap.columns-3 td[colspan="2"] {
+            width: 66.666%;
+        }
+        #table_wrap.columns-3 td[colspan="3"] {
+            width: 100%;
+        }
+        #table_wrap.columns-3 td.col1, #table_wrap.columns-3 td.col2 {
+            border-right: 1px solid #ddd;
+        }
+        #table_wrap.columns-3 td.col3 {
+            border-right: none;
+        }
+
+    /* COLUMNS-2 */
+        #table_wrap.columns-2 td {
+            width: 50%;
+        }
+        #table_wrap.columns-2 td[colspan="2"] {
+            width: 100%;
+        }
+        #table_wrap.columns-2 td.col1 {
+            border-right: 1px solid #ddd;
+        }
+        #table_wrap.columns-2 td.col2 {
+            border-right: none;
+        }
+
+    /* COLUMNS-1 */
+        #table_wrap.columns-1 td {
+            width: 100%;
+        }
+        #table_wrap.columns-1 td.col1 {
+            border-right: none;
+        }
+    
+
+/* COL SELECT */
+    .col_select, .col_select:hover {
+        background: #ddebfd !important;
+    }
+    .opt_select, .opt1:hover, .opt2:hover, .opt3:hover, .opt4:hover {
+        cursor: pointer;
+        background: #63aaff !important;
+    }
+    .opt_select:hover {
+        /* cursor: url('https://dev.finlit.yale.edu/sites/default/files/images/close_cursor_2.png') 10 10, auto;*/
+        cursor: image-set(url('https://dev.finlit.yale.edu/sites/default/files/images/circle-xmark-solid-15.png') 1x, url('https://dev.finlit.yale.edu/sites/default/files/images/circle-xmark-solid-30.png') 2x), auto;
+    }
+
+/* TOOL TIP */
+    .tooltip {
+        position: relative;
+        display: inline-block;
+    }
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 400px;
+        background-color: #555;
+        color: #fff;
+        border-radius: 6px;
+        padding: 6px 14px 8px;
+        position: absolute;
+        z-index: 3;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -200px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+    }
+    .tooltip:hover .tooltiptext,
+    .tooltip:focus .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+    .tooltip_off {
+        display: none;
+    }
+
+/* OUTCOMES */
+    #four_year_look {
+/*			display: none;*/
+    }
+
+/* YALE COLLEGE SITE OVERRIDES */	
+    #table_wrap caption {
+        display: none;
+    }
+    .table_wrapper {
+        margin-bottom: 0;
+    }
+    #table_wrap table {
+        background-color: #fff;
+    }
+    .typography table th {
+        background: none;
+    }
+    .typography table tr {
+        border-bottom: none;
+    }
+    #table_wrap table thead tr th h2 {
+        margin: 0 0 -8px -20px;
+    }
+    #table_wrap table thead tr th {
+        top: 30px;
+    }
+    #table_wrap tbody tr {
+        border-top: none;
+    }
+    #table_wrap tbody td {
+        border-bottom: 1px solid #ddd;
+    }
+    #table_wrap > .table_wrapper > .table_wrapper_inner > table > tbody > tr:nth-child(odd) {
+        background-color: #f9f9f9;
+    }
+    td.opt1, td.opt2, td.opt3, td.opt4 {
+        background-color: #eee;
+        border-right: 1px solid #ddd;
+    }
+    td.opt1:last-child, td.opt2:last-child, td.opt3:last-child, td.opt4:last-child, td.opt_select {
+        border-right: none;
+    }
+    .hover_control {
+        margin: 0 -20px 0 0;
+    }
+    .hover_control img {
+        margin-left: 4px;
+    }
+    .hover_desc {
+        font-weight: 400;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+
+    /* YC FULL WIDTH */
+        @media (min-width: 992px) {
+            .offset-lg-1 {
+                margin: 0 8.333333%;
+            }
+            .col-lg-8 {
+                -ms-flex: unset;
+                flex: unset;
+                max-width: unset;
+            }
+            .table_wrapper_inner {
+                overflow-y: unset;
+            }
+            .table_wrapper_overflow {
+                border: none;
+            }
+            .table_wrapper_overflow:after {
+                background: none;
+            }
+        }
+
+    /* YC MOBILE */	
+        @media (max-width: 991.98px) {
+            span.tooltiptext,
+            .hover_control {
+                display: none;
+            }
+            #table_wrap table {
+                background-color: unset;
+            }
+            .table_wrapper_overflow {
+                border: none;
+                border-right: 1px solid #ccc;
+            }
+            #table_wrap table thead tr th {
+                top: 0;
+            }
+            #table_wrap table thead tr th h2 {
+                margin: 0 0 10px -20px;
+            }
+        }
+
+    /* ACCESSIBILITY */	
+        .typography #roadmap_wrap table td {
+            color: #000;
+        }
+
+</style>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script><script type="text/javascript">
+// console.log('before jq');
+$(document).ready(function() {
+    // console.log('after doc ready');
+    // Column highlights
+    jQuery('.opt1, .opt2, .opt3, .opt4').click(function() {
+        if (jQuery(this).hasClass('opt1')) {
+            if (jQuery(this).hasClass('opt_select')) {
+                jQuery('.col1, .col2, .col3, .col4').removeClass('col_select');
+                jQuery('.opt1, .opt2, .opt3, .opt4').removeClass('opt_select');
+            } else {
+                jQuery('.col2, .col3, .col4').removeClass('col_select');
+                jQuery('.opt2, .opt3, .opt4').removeClass('opt_select');
+                jQuery('.col1').addClass('col_select');
+                jQuery('.opt1').addClass('opt_select');
+            }
+        } else if (jQuery(this).hasClass('opt2')) {
+            if (jQuery(this).hasClass('opt_select')) {
+                jQuery('.col1, .col2, .col3, .col4').removeClass('col_select');
+                jQuery('.opt1, .opt2, .opt3, .opt4').removeClass('opt_select');
+            } else {
+                jQuery('.col1, .col3, .col4').removeClass('col_select');
+                jQuery('.opt1, .opt3, .opt4').removeClass('opt_select');
+                jQuery('.col2').addClass('col_select');
+                jQuery('.opt2').addClass('opt_select');
+            }
+        } else if (jQuery(this).hasClass('opt3')) {
+            if (jQuery(this).hasClass('opt_select')) {
+                jQuery('.col1, .col2, .col3, .col4').removeClass('col_select');
+                jQuery('.opt1, .opt2, .opt3, .opt4').removeClass('opt_select');
+            } else {
+                jQuery('.col1, .col2, .col4').removeClass('col_select');
+                jQuery('.opt1, .opt2, .opt4').removeClass('opt_select');
+                jQuery('.col3').addClass('col_select');
+                jQuery('.opt3').addClass('opt_select');
+            }
+        } else if (jQuery(this).hasClass('opt4')) {
+            if (jQuery(this).hasClass('opt_select')) {
+                jQuery('.col1, .col2, .col3, .col4').removeClass('col_select');
+                jQuery('.opt1, .opt2, .opt3, .opt4').removeClass('opt_select');
+            } else {
+                jQuery('.col1, .col2, .col3').removeClass('col_select');
+                jQuery('.opt1, .opt2, .opt3').removeClass('opt_select');
+                jQuery('.col4').addClass('col_select');
+                jQuery('.opt4').addClass('opt_select');
+            }
+        }
+    });
+
+    // Hover control
+    jQuery('.hover_control img').click(function() {
+        if (jQuery(this).hasClass('hover_on')) {
+            jQuery('.hover_on').removeClass('hover_state_off').addClass('hover_state_on');
+            jQuery('.hover_off').removeClass('hover_state_on').addClass('hover_state_off');
+            jQuery('.tooltip_off').addClass('tooltiptext').removeClass('tooltip_off')
+        } else if (jQuery(this).hasClass('hover_off')) {
+            jQuery('.hover_on').removeClass('hover_state_on').addClass('hover_state_off');
+            jQuery('.hover_off').removeClass('hover_state_off').addClass('hover_state_on');
+            jQuery('.tooltiptext').removeClass('tooltiptext').addClass('tooltip_off')
+        }
+    });
+    jQuery('.hover_control .hover_on').hover(
+        function() {
+            jQuery('.hover_desc').html('Show Descriptions');
+        },
+        function() {
+            jQuery('.hover_desc').html('');
+        }
+    );
+    jQuery('.hover_control .hover_off').hover(
+        function() {
+            jQuery('.hover_desc').html('Hide Descriptions');
+        },
+        function() {
+            jQuery('.hover_desc').html('');
+        }
+    );
+
+
+    // Outcomes tabs
+console.log('end jq');
+});
+console.log('end scripts');
+</script>
+<div id="roadmap_wrap">
+
+<div id="table_wrap" class="columns-2">
+<!-- PREREQUISITES FOR ENTERING THE MAJOR -->
+<table>
+<caption>Prerequisites for Entering the Major</caption>
+<thead>
+    <tr>
+        <th colspan="2">
+        <table>
+            <tbody>
+                <tr>
+                    <td colspan="2">
+                    <h2 role="presentation">Prerequisites for Entering the Major</h2>
+
+                    <div class="hover_control"><span class="hover_desc"></span><img role="button" tabindex="0" class="hover_on hover_state_on" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-on-25.png" alt="Turn hover descriptions on" /> <img role="button" tabindex="0" class="hover_off hover_state_off" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-off-25.png" alt="Turn hover descriptions off" /></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. Film and Media Studies</div></td>
+                    <td role="columnheader" class="opt2"><div role="button" tabindex="0">B.A. Film and Media Studies (Intensive Major)</div></td>
+                </tr>
+            </tbody>
+        </table>
+        </th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td colspan="2" class="col1 col2">None</td>
+    </tr>
+</tbody>
+</table>
+
+<!-- END PREREQUIREMENTS FOR ENTERING THE MAJOR --><!-- REQUIREMENTS FOR EACH DEGREE -->
+<table>
+<caption>Requirements for Each Degree</caption>
+<thead>
+    <tr>
+        <th colspan="2">
+        <table>
+            <tbody>
+                <tr>
+                    <td colspan="2">
+                    <h2 role="presentation">Requirements for Each Degree</h2>
+
+                    <div class="hover_control"><span class="hover_desc"></span><img role="button" tabindex="0" class="hover_on hover_state_on" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-on-25.png" alt="Turn hover descriptions on" /> <img role="button" tabindex="0" class="hover_off hover_state_off" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-off-25.png" alt="Turn hover descriptions off" /></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. Film and Media Studies</div></td>
+                    <td role="columnheader" class="opt2"><div role="button" tabindex="0">B.A. Film and Media Studies (Intensive Major)</div></td>
+                </tr>
+            </tbody>
+        </table>
+        </th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td colspan="2" class="col1 col2">12 courses, incl senior req</td>
+    </tr>
+    <tr>
+        <td colspan="2" class="col1 col2">FILM 1501<br>
+            FILM 1601<br>
+            FILM 3201</td>
+    </tr>
+    <tr>
+        <td colspan="2" class="col1 col2">1 upper-level national or world cinema course</td>
+    </tr>
+    <tr>
+        <td colspan="2" class="col1 col2">1 upper-level critical studies course</td>
+    </tr>
+    <tr>
+        <td colspan="2" class="col1 col2">1 production course</td>
+    </tr>
+    <tr>
+        <td colspan="2" class="col1 col2">4 electives</td>
+    </tr>
+</tbody>
+</table>
+
+<!-- END REQUIREMENTS FOR EACH DEGREE --><!-- SENIOR REQUIREMENTS -->
+<table>
+<caption>Senior Requirements</caption>
+<thead>
+    <tr>
+        <th colspan="2">
+        <table>
+            <tbody>
+                <tr>
+                    <td colspan="2">
+                    <h2 role="presentation">Senior Requirements</h2>
+
+                    <div class="hover_control"><span class="hover_desc"></span><img role="button" tabindex="0" class="hover_on hover_state_on" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-on-25.png" alt="Turn hover descriptions on" /> <img role="button" tabindex="0" class="hover_off hover_state_off" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-off-25.png" alt="Turn hover descriptions off" /></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. Film and Media Studies</div></td>
+                    <td role="columnheader" class="opt2"><div role="button" tabindex="0">B.A. Film and Media Studies (Intensive Major)</div></td>
+                </tr>
+            </tbody>
+        </table>
+        </th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td colspan="1" class="col1">Two terms of<br>
+            Senior essay<br>
+            or<br>
+            Senior project in production<br>
+            (see Summary of Major Requirements)</td>
+        <td colspan="1" class="col2">Two terms of<br>
+            Senior essay<br>
+            and<br>
+            Senior project in production<br>
+            (see Summary of Major Requirements)</td>
+    </tr>
+</tbody>
+</table>
+
+<!-- SENIOR REQUIREMENTS --><!-- SUBSTITUTIONS -->
+<table>
+<caption>Substitutions</caption>
+<thead>
+    <tr>
+        <th colspan="2">
+        <table>
+            <tbody>
+                <tr>
+                    <td colspan="2">
+                    <h2 role="presentation">Substitutions</h2>
+
+                    <div class="hover_control"><span class="hover_desc"></span><img role="button" tabindex="0" class="hover_on hover_state_on" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-on-25.png" alt="Turn hover descriptions on" /> <img role="button" tabindex="0" class="hover_off hover_state_off" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-off-25.png" alt="Turn hover descriptions off" /></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. Film and Media Studies</div></td>
+                    <td role="columnheader" class="opt2"><div role="button" tabindex="0">B.A. Film and Media Studies (Intensive Major)</div></td>
+                </tr>
+            </tbody>
+        </table>
+        </th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td colspan="2" class="col1 col2">None</td>
+    </tr>
+</tbody>
+</table>
+
+</div>
+<!-- END TABLE WRAP -->
+
+<p>&nbsp;</p>
+</div>

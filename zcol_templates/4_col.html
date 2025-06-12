@@ -1,0 +1,596 @@
+<style type="text/css">/* PAGE OVERRIDES */
+		#section-content {
+			overflow: visible;
+		}
+		#region-content {
+			float: right;
+			margin-left: 0;
+			width: 900px;
+		}
+		#region-sidebar-second {
+			float: left;
+			width: unset;
+		}
+		td img {
+			width: unset;
+			min-width: unset;
+			max-width: unset;
+		}
+		@media (min-width: 1025px) {
+		    .container-12 .grid-8 {
+		        width: unset;
+		    }
+		}
+		@media (min-width: 1025px) {
+			.region-content {
+				max-width: unset;
+			}
+		}
+
+	/* NEW PAGE STYLES */
+		#roadmap_wrap h2 {
+			margin-top: 1.5em;
+		}
+		#utility {
+		    border-top: 1px solid #ddd;
+		    margin-top: 4em;
+		    padding-top: .75em;
+		    text-align: right;
+		}
+		.hover_control {
+			float: right;
+			margin:	-2em 0;
+		}
+		.hover_control img {
+			height: 18px !important;
+			opacity: .5;
+		}
+		.hover_control img.hover_state_off:hover {
+			cursor: pointer;
+			opacity: .7;
+		}
+		.hover_control .hover_state_off {
+			opacity: .2;
+		}
+
+	/* TABLE STYLES */
+		#table_wrap table {
+			border-collapse: collapse;
+			margin-left: 3em 0;
+		}
+		#table_wrap th > table {
+			margin: 0;
+		}
+		#table_wrap th > table tr {
+			border-top: none;
+		}
+		#table_wrap th > table td {
+			vertical-align: bottom;
+		}
+		#table_wrap th > table td[colspan] {
+			background: #fff;
+			padding: 0;
+		}
+		#table_wrap th tbody,
+		#table_wrap > table >thead {
+			border: none;
+		}
+		#table_wrap table thead tr th {
+			position: sticky;
+			top: 0;
+			z-index: 2;
+		}
+		#table_wrap table thead tr th h2 {
+			text-transform: none;
+			margin: 1.25em 0 1em 0;
+		}
+		#table_wrap table thead tr th[colspan] {
+			padding: 0;
+		}
+		#table_wrap tbody tr {
+			border-top: 1px solid #ddd;
+		}
+		#table_wrap .opt1, #table_wrap .opt2, #table_wrap .opt3, #table_wrap .opt4 {
+			border-bottom: 2px solid #ccc;
+		}
+		#table_wrap tbody,
+		#table_wrap tbody tr:first-child {
+			border-top: none;
+		}
+
+		/* COLUMNS-4 */
+			#table_wrap.columns-4 td {
+				width: 25%;
+			}
+			#table_wrap.columns-4 td[colspan="2"] {
+				width: 50%;
+			}
+			#table_wrap.columns-4 td[colspan="3"] {
+				width: 75%;
+			}
+			#table_wrap.columns-4 td[colspan="4"] {
+				width: 100%;
+			}
+			#table_wrap.columns-4 td.col1, #table_wrap.columns-4 td.col2, #table_wrap.columns-4 td.col3 {
+				border-right: 1px solid #ddd;
+			}
+			#table_wrap.columns-4 td.col4 {
+				border-right: none;
+			}
+
+		/* COLUMNS-3 */
+			#table_wrap.columns-3 td {
+				width: 33.333%;
+			}
+			#table_wrap.columns-3 td[colspan="2"] {
+				width: 66.666%;
+			}
+			#table_wrap.columns-3 td[colspan="3"] {
+				width: 100%;
+			}
+			#table_wrap.columns-3 td.col1, #table_wrap.columns-3 td.col2 {
+				border-right: 1px solid #ddd;
+			}
+			#table_wrap.columns-3 td.col3 {
+				border-right: none;
+			}
+
+		/* COLUMNS-2 */
+			#table_wrap.columns-2 td {
+				width: 50%;
+			}
+			#table_wrap.columns-2 td[colspan="2"] {
+				width: 100%;
+			}
+			#table_wrap.columns-2 td.col1 {
+				border-right: 1px solid #ddd;
+			}
+			#table_wrap.columns-2 td.col2 {
+				border-right: none;
+			}
+
+		/* COLUMNS-1 */
+			#table_wrap.columns-1 td {
+				width: 100%;
+			}
+			#table_wrap.columns-1 td.col1 {
+				border-right: none;
+			}
+		
+
+	/* COL SELECT */
+		.col_select, .col_select:hover {
+			background: #ddebfd !important;
+		}
+		.opt_select, .opt1:hover, .opt2:hover, .opt3:hover, .opt4:hover {
+			cursor: pointer;
+			background: #63aaff !important;
+		}
+		.opt_select:hover {
+			/* cursor: url('https://dev.finlit.yale.edu/sites/default/files/images/close_cursor_2.png') 10 10, auto;*/
+			cursor: image-set(url('https://dev.finlit.yale.edu/sites/default/files/images/circle-xmark-solid-15.png') 1x, url('https://dev.finlit.yale.edu/sites/default/files/images/circle-xmark-solid-30.png') 2x), auto;
+		}
+		#table_wrap.columns-1 .opt1:hover {
+			background: #eee !important;
+		}
+
+	/* TOOL TIP */
+		.tooltip {
+			position: relative;
+			display: inline-block;
+		}
+		.tooltip .tooltiptext {
+			visibility: hidden;
+			width: 400px;
+			background-color: #555;
+			color: #fff;
+			border-radius: 6px;
+			padding: 6px 14px 8px;
+			position: absolute;
+			z-index: 3;
+			bottom: 125%;
+			left: 50%;
+			margin-left: -200px;
+			opacity: 0;
+			transition: opacity 0.3s;
+		}
+		.tooltip .tooltiptext::after {
+			content: "";
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			margin-left: -5px;
+			border-width: 5px;
+			border-style: solid;
+			border-color: #555 transparent transparent transparent;
+		}
+		.tooltip:hover .tooltiptext,
+		.tooltip:focus .tooltiptext {
+			visibility: visible;
+			opacity: 1;
+		}
+		.tooltip_off {
+			display: none;
+		}
+
+	/* OUTCOMES */
+		#four_year_look {
+/*			display: none;*/
+		}
+
+	/* YALE COLLEGE SITE OVERRIDES */	
+		#table_wrap caption {
+			display: none;
+		}
+		.table_wrapper {
+			margin-bottom: 0;
+		}
+		#table_wrap table {
+			background-color: #fff;
+		}
+		.typography table th {
+			background: none;
+		}
+		.typography table tr {
+			border-bottom: none;
+		}
+		#table_wrap table thead tr th h2 {
+			margin: 0 0 -8px -20px;
+		}
+		#table_wrap table thead tr th {
+			top: 30px;
+		}
+		#table_wrap tbody tr {
+			border-top: none;
+		}
+		#table_wrap tbody td {
+			border-bottom: 1px solid #ddd;
+		}
+		#table_wrap > .table_wrapper > .table_wrapper_inner > table > tbody > tr:nth-child(odd) {
+			background-color: #f9f9f9;
+		}
+		td.opt1, td.opt2, td.opt3, td.opt4 {
+			background-color: #eee;
+			border-right: 1px solid #ddd;
+		}
+		td.opt1:last-child, td.opt2:last-child, td.opt3:last-child, td.opt4:last-child, td.opt_select {
+			border-right: none;
+		}
+		.hover_control {
+			margin: 0 -20px 0 0;
+		}
+		.hover_control img {
+			margin-left: 4px;
+		}
+		.hover_desc {
+		    font-weight: 400;
+		    font-size: 14px;
+		    text-transform: uppercase;
+		}
+
+		/* YC FULL WIDTH */
+			@media (min-width: 992px) {
+		    	.offset-lg-1 {
+		        	margin: 0 8.333333%;
+		    	}
+			    .col-lg-8 {
+			        -ms-flex: unset;
+			        flex: unset;
+			        max-width: unset;
+			    }
+				.table_wrapper_inner {
+					overflow-y: unset;
+				}
+				.table_wrapper_overflow {
+					border: none;
+				}
+				.table_wrapper_overflow:after {
+					background: none;
+				}
+			}
+
+		/* YC MOBILE */	
+			@media (max-width: 991.98px) {
+				span.tooltiptext,
+				.hover_control {
+					display: none;
+				}
+				#table_wrap table {
+					background-color: unset;
+				}
+				.table_wrapper_overflow {
+					border: none;
+					border-right: 1px solid #ccc;
+				}
+				#table_wrap table thead tr th {
+					top: 0;
+				}
+				#table_wrap table thead tr th h2 {
+				    margin: 0 0 10px -20px;
+				}
+			}
+
+		/* ACCESSIBILITY */	
+			.typography #roadmap_wrap table td {
+				color: #000;
+			}
+
+</style>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script><script type="text/javascript">
+// console.log('before jq');
+	$(document).ready(function() {
+		// console.log('after doc ready');
+		// Column highlights
+		if (!jQuery('#table_wrap').hasClass('columns-1')) {
+			jQuery('.opt1, .opt2, .opt3, .opt4').click(function() {
+				if (jQuery(this).hasClass('opt1')) {
+					if (jQuery(this).hasClass('opt_select')) {
+						jQuery('.col1, .col2, .col3, .col4').removeClass('col_select');
+						jQuery('.opt1, .opt2, .opt3, .opt4').removeClass('opt_select');
+					} else {
+						jQuery('.col2, .col3, .col4').removeClass('col_select');
+						jQuery('.opt2, .opt3, .opt4').removeClass('opt_select');
+						jQuery('.col1').addClass('col_select');
+						jQuery('.opt1').addClass('opt_select');
+					}
+				} else if (jQuery(this).hasClass('opt2')) {
+					if (jQuery(this).hasClass('opt_select')) {
+						jQuery('.col1, .col2, .col3, .col4').removeClass('col_select');
+						jQuery('.opt1, .opt2, .opt3, .opt4').removeClass('opt_select');
+					} else {
+						jQuery('.col1, .col3, .col4').removeClass('col_select');
+						jQuery('.opt1, .opt3, .opt4').removeClass('opt_select');
+						jQuery('.col2').addClass('col_select');
+						jQuery('.opt2').addClass('opt_select');
+					}
+				} else if (jQuery(this).hasClass('opt3')) {
+					if (jQuery(this).hasClass('opt_select')) {
+						jQuery('.col1, .col2, .col3, .col4').removeClass('col_select');
+						jQuery('.opt1, .opt2, .opt3, .opt4').removeClass('opt_select');
+					} else {
+						jQuery('.col1, .col2, .col4').removeClass('col_select');
+						jQuery('.opt1, .opt2, .opt4').removeClass('opt_select');
+						jQuery('.col3').addClass('col_select');
+						jQuery('.opt3').addClass('opt_select');
+					}
+				} else if (jQuery(this).hasClass('opt4')) {
+					if (jQuery(this).hasClass('opt_select')) {
+						jQuery('.col1, .col2, .col3, .col4').removeClass('col_select');
+						jQuery('.opt1, .opt2, .opt3, .opt4').removeClass('opt_select');
+					} else {
+						jQuery('.col1, .col2, .col3').removeClass('col_select');
+						jQuery('.opt1, .opt2, .opt3').removeClass('opt_select');
+						jQuery('.col4').addClass('col_select');
+						jQuery('.opt4').addClass('opt_select');
+					}
+				}
+			});
+		}
+
+		// Hover control
+		jQuery('.hover_control img').click(function() {
+			if (jQuery(this).hasClass('hover_on')) {
+				jQuery('.hover_on').removeClass('hover_state_off').addClass('hover_state_on');
+				jQuery('.hover_off').removeClass('hover_state_on').addClass('hover_state_off');
+				jQuery('.tooltip_off').addClass('tooltiptext').removeClass('tooltip_off')
+			} else if (jQuery(this).hasClass('hover_off')) {
+				jQuery('.hover_on').removeClass('hover_state_on').addClass('hover_state_off');
+				jQuery('.hover_off').removeClass('hover_state_off').addClass('hover_state_on');
+				jQuery('.tooltiptext').removeClass('tooltiptext').addClass('tooltip_off')
+			}
+		});
+		jQuery('.hover_control .hover_on').hover(
+			function() {
+				jQuery('.hover_desc').html('Show Descriptions');
+			},
+			function() {
+				jQuery('.hover_desc').html('');
+			}
+		);
+		jQuery('.hover_control .hover_off').hover(
+			function() {
+				jQuery('.hover_desc').html('Hide Descriptions');
+			},
+			function() {
+				jQuery('.hover_desc').html('');
+			}
+		);
+
+
+		// Outcomes tabs
+console.log('end jq');
+	});
+console.log('end scripts');
+</script>
+<div id="roadmap_wrap">
+
+<div id="table_wrap" class="columns-4">
+<!-- PREREQUISITES FOR ENTERING THE MAJOR -->
+<table>
+	<caption>Prerequisites for Entering the Major</caption>
+	<thead>
+		<tr>
+			<th colspan="4">
+			<table>
+				<tbody>
+					<tr>
+						<td colspan="4">
+						<h2 role="presentation">Prerequisites for Entering the Major</h2>
+
+						<div class="hover_control"><span class="hover_desc"></span><img role="button" tabindex="0" class="hover_on hover_state_on" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-on-25.png" alt="Turn hover descriptions on" /> <img role="button" tabindex="0" class="hover_off hover_state_off" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-off-25.png" alt="Turn hover descriptions off" /></div>
+						</td>
+					</tr>
+					<tr>
+						<td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. Chemistry</div></td>
+						<td role="columnheader" class="opt2"><div role="button" tabindex="0">B.S. Chemistry</div></td>
+						<td role="columnheader" class="opt3"><div role="button" tabindex="0">B.S. Chemistry<br />
+						(Intensive Major)</div></td>
+						<td role="columnheader" class="opt4"><div role="button" tabindex="0">B.S./M.S. Chemistry</div></td>
+					</tr>
+				</tbody>
+			</table>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="col1 col2 col3 col4" colspan="4"><a class="tooltip" href="https://courses.yale.edu/?details&amp;srcdb=202403&amp;code=CHEM%20161" target="_blank">CHEM 161<span class="tooltiptext">A comprehensive survey of modern descriptive, inorganic, and physical chemistry. Atomic theory, stoichiometry, thermochemistry, chemical periodicity, concepts in chemical bonding, and the shapes of molecules. Appropriate either as a first chemistry course or for students with one year of high school chemistry.</span></a> and <a class="tooltip" href="https://courses.yale.edu/?details&amp;srcdb=202403&amp;code=CHEM%20165" target="_blank">165<span class="tooltiptext">Topics include kinetics, chemical equilibrium, acid-base chemistry, free energy and entropy, electrochemistry, and nuclear chemistry.</span></a> or <a class="tooltip" href="https://courses.yale.edu/?details&amp;srcdb=202403&amp;code=CHEM%20163" target="_blank">CHEM 163<span class="tooltiptext">An in-depth examination of the principles of atomic, molecular, and stolid state chemistry, including structures, periodicity, and chemical reactivity. Topics include the quantum mechanics of atoms and chemical bonding, and inorganic, organic, and solid state molecules and materials. For students with strong secondary school exposure to general chemistry.</span></a> and <a class="tooltip" href="https://courses.yale.edu/?details&amp;srcdb=202403&amp;code=CHEM%20136L" target="_blank">167<span class="tooltiptext">Introduction to rate and equilibrium measurements, acid-base chemistry, synthesis of inorganic compounds, and qualitative/quantitative analysis.</span></a>; <a class="tooltip" href="https://courses.yale.edu/?details&amp;srcdb=202403&amp;code=CHEM%20134L" target="_blank">CHEM 134L<span class="tooltiptext">An introduction to basic chemistry laboratory methods. Techniques required for quantitative analysis of thermodynamic processes and the properties of gases.</span></a> and <a class="tooltip" href="https://courses.yale.edu/?details&amp;srcdb=202403&amp;code=CHEM%20136L" target="_blank">136L<span class="tooltiptext">Introduction to rate and equilibrium measurements, acid-base chemistry, synthesis of inorganic compounds, and qualitative/quantitative analysis.</span></a></td>
+		</tr>
+		<tr>
+			<td class="col1 col2 col3 col4" colspan="4"><a class="tooltip" href="https://courses.yale.edu/?details&amp;srcdb=202403&amp;code=MATH%20115" target="_blank">MATH 115<span class="tooltiptext">A continuation of MATH 112, this course develops concepts and skills at the foundation of the STEM disciplines. In particular, we introduce Riemann sums, integration strategies, series convergence, and Taylor polynomial approximation. We use these tools to measure lengths of parametric curves, areas of polar regions and volumes of solids of revolution, and we explore applications of calculus to other disciplines including physics, economics, and statistics. MATH 115 also focuses on strategies for problem solving, communication, and logical reasoning.</span></a> or <a class="tooltip" href="https://courses.yale.edu/?details&amp;srcdb=202403&amp;code=MATH%20116" target="_blank">116<span class="tooltiptext">Techniques and applications of integration, approximation of functions by polynomials, modeling by differential equations. Introduction to topics in mathematical modeling that are applicable to biological systems. Discrete and continuous models of population, neural, and cardiac dynamics. Stability of fixed points and limit cycles of differential equations. </span></a> (<a class="tooltip" href="https://courses.yale.edu/?details&amp;srcdb=202403&amp;code=MATH%20120" target="_blank">MATH 120<span class="tooltiptext">Analytic geometry in three dimensions, using vectors. Real-valued functions of two and three variables, partial derivatives, gradient and directional derivatives, level curves and surfaces, maxima and minima. Parametrized curves in space, motion in space, line integrals; applications. Multiple integrals, with applications. Divergence and curl. The theorems of Green, Stokes, and Gauss.</span></a> or <a class="tooltip" href="https://courses.yale.edu/?details&amp;srcdb=202403&amp;crn=12390" target="_blank">MATH 121<span class="tooltiptext">An introduction to multivariable calculus focusing on applications to engineering problems. Topics include vector-valued functions, vector analysis, partial differentiation, multiple integrals, vector calculus, and the theorems of Green, Stokes, and Gauss.</span></a> or <a class="tooltip" href="https://courses.yale.edu/?details&amp;srcdb=202403&amp;crn=12390" target="_blank">ENAS 151<span class="tooltiptext">An introduction to multivariable calculus focusing on applications to engineering problems. Topics include vector-valued functions, vector analysis, partial differentiation, multiple integrals, vector calculus, and the theorems of Green, Stokes, and Gauss.</span></a> are encouraged)</td>
+		</tr>
+		<tr>
+			<td class="col1 col2 col3" colspan="3"><a class="tooltip" href="https://courses.yale.edu/?details&amp;srcdb=202403&amp;crn=11817" target="_blank">PHYS 170<span class="tooltiptext">An introduction to classical physics with special emphasis on applications drawn from the life sciences and medicine. Fall-term topics include vectors and kinematics, Newton's laws, momentum, energy, random walks, diffusion, fluid mechanics, mathematical modeling, and statistical mechanics. Spring-term topics include oscillations, waves, sound, electrostatics, circuits, Maxwell's equations, electromagnetic waves, gene circuits, and quantum mechanics. Essential mathematics are introduced and explained as needed.</span></a>, <a class="tooltip" href="https://courses.yale.edu/?details&amp;srcdb=202403&amp;code=PHYS%20180" target="_blank">180<span class="tooltiptext">A broad introduction to classical and modern physics for students who have some previous preparation in physics and mathematics. Fall-term topics include Newtonian mechanics, gravitation, waves, and thermodynamics. Spring-term topics include electromagnetism, special relativity, and quantum physics.</span></a>, <a class="tooltip" href="https://courses.yale.edu/?details&amp;srcdb=202403&amp;crn=11820" target="_blank">200<span class="tooltiptext">A thorough introduction to the principles and methods of physics for students who have good preparation in physics and mathematics. Emphasis on problem solving and quantitative reasoning. Fall-term topics include Newtonian mechanics, special relativity, gravitation, thermodynamics, and waves. Spring-term topics include electromagnetism, geometrical and physical optics, and elements of quantum mechanics.</span></a>, or <a class="tooltip" href="https://courses.yale.edu/?details&amp;srcdb=202403&amp;crn=11832" target="_blank">260<span class="tooltiptext">An introduction to major branches of physics—classical and relativistic mechanics; gravitation; electricity and magnetism; and quantum physics,information, and computation—at a sophisticated level. For students majoring in the physical sciences, mathematics, and philosophy whose high school training included both mechanics and electricity and magnetism at the typical college/AP level and have excellent training in, and a flair for, mathematical methods and quantitative analysis.</span></a> or equivalents in advanced placement</td>
+			<td class="col4"><a class="tooltip" href="https://courses.yale.edu/?details&amp;srcdb=202403&amp;crn=11820" target="_blank">PHYS 200<span class="tooltiptext">A thorough introduction to the principles and methods of physics for students who have good preparation in physics and mathematics. Emphasis on problem solving and quantitative reasoning. Fall-term topics include Newtonian mechanics, special relativity, gravitation, thermodynamics, and waves. Spring-term topics include electromagnetism, geometrical and physical optics, and elements of quantum mechanics.</span></a>, <a class="tooltip" href="https://courses.yale.edu/?details&amp;srcdb=202403&amp;crn=11820" target="_blank">201<span class="tooltiptext">NOT FOUND A thorough introduction to the principles and methods of physics for students who have good preparation in physics and mathematics. Emphasis on problem solving and quantitative reasoning. Fall-term topics include Newtonian mechanics, special relativity, gravitation, thermodynamics, and waves. Spring-term topics include electromagnetism, geometrical and physical optics, and elements of quantum mechanics.</span></a> or<br />
+			<a class="tooltip" href="https://courses.yale.edu/?details&amp;srcdb=202403&amp;crn=11832" target="_blank">PHYS 260<span class="tooltiptext">An introduction to major branches of physics—classical and relativistic mechanics; gravitation; electricity and magnetism; and quantum physics,information, and computation—at a sophisticated level. For students majoring in the physical sciences, mathematics, and philosophy whose high school training included both mechanics and electricity and magnetism at the typical college/AP level and have excellent training in, and a flair for, mathematical methods and quantitative analysis.</span></a>, <a class="tooltip" href="https://courses.yale.edu/?details&amp;srcdb=202403&amp;crn=11832" target="_blank">261<span class="tooltiptext">NOT FOUND An introduction to major branches of physics—classical and relativistic mechanics; gravitation; electricity and magnetism; and quantum physics,information, and computation—at a sophisticated level. For students majoring in the physical sciences, mathematics, and philosophy whose high school training included both mechanics and electricity and magnetism at the typical college/AP level and have excellent training in, and a flair for, mathematical methods and quantitative analysis.</span></a> or<br />
+			<a class="tooltip" href="https://courses.yale.edu/?details&amp;srcdb=202403&amp;crn=11832" target="_blank">PHYS 400<span class="tooltiptext">NOT FOUND An introduction to major branches of physics—classical and relativistic mechanics; gravitation; electricity and magnetism; and quantum physics,information, and computation—at a sophisticated level. For students majoring in the physical sciences, mathematics, and philosophy whose high school training included both mechanics and electricity and magnetism at the typical college/AP level and have excellent training in, and a flair for, mathematical methods and quantitative analysis.</span></a> or higher<br />
+			(with DUS approval)</td>
+		</tr>
+	</tbody>
+</table>
+<!-- END PREREQUISITES FOR ENTERING THE MAJOR --><!-- REQUIREMENTS FOR EACH DEGREE -->
+
+<table>
+	<caption>Requirements for Each Degree</caption>
+	<thead>
+		<tr>
+			<th colspan="4">
+			<table>
+				<tbody>
+					<tr>
+						<td colspan="4">
+						<h2 role="presentation">Requirements for Each Degree</h2>
+
+						<div class="hover_control"><span class="hover_desc"></span><img role="button" tabindex="0" class="hover_on hover_state_on" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-on-25.png" alt="Turn hover descriptions on" /> <img role="button" tabindex="0" class="hover_off hover_state_off" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-off-25.png" alt="Turn hover descriptions off" /></div>
+						</td>
+					</tr>
+					<tr>
+						<td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. Chemistry</div></td>
+						<td role="columnheader" class="opt2"><div role="button" tabindex="0">B.S. Chemistry</div></td>
+						<td role="columnheader" class="opt3"><div role="button" tabindex="0">B.S. Chemistry<br />
+						(Intensive Major)</div></td>
+						<td role="columnheader" class="opt4"><div role="button" tabindex="0">B.S./M.S. Chemistry</div></td>
+					</tr>
+				</tbody>
+			</table>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="col1">10 credits<br />
+			(beyond prereqs)</td>
+			<td class="col2">10 credits<br />
+			(beyond prereqs)</td>
+			<td class="col3">10 credits<br />
+			(beyond prereqs)</td>
+			<td class="col4">19 credits (beyond prereqs) (B.S. Intensive requirements + 4 addtl grad courses)</td>
+		</tr>
+		<tr>
+			<td class="col1 col2 col3" colspan="3">2 terms Organic Chemistry (with Labs) <a class="tooltip" href="https://courses.yale.edu/?details&amp;srcdb=201803&amp;crn=10629" target="_blank">CHEM 174<span class="tooltiptext">An introductory course focused on current theories of structure and mechanism in organic chemistry, their development, and their basis in experimental observation. Open to freshmen with excellent preparation in chemistry, mathematics, and physics who have taken the department's advanced chemistry placement examination.</span></a> or <a class="tooltip" href="https://courses.yale.edu/?details&amp;srcdb=202403&amp;code=CHEM%20220" target="_blank">CHEM 220<span class="tooltiptext">An introductory course covering the fundamental principles of organic chemistry. The laboratory for this course is </span></a><a class="tooltip" href="https://courses.yale.edu/" target="_blank">CHEM 222L<span class="tooltiptext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas sem nibh, eget vehicula nulla consequat a. Quisque consectetur a ante vel vehicula. Phasellus posuere risus sed odio sagittis, vitae tempus velit eleifend. Maecenas aliquam luctus orci, sit amet molestie arcu elementum id. Nunc tincidunt nunc id pharetra tempus. Vestibulum metus arcu, condimentum sit amet nibh id, sollicitudin faucibus leo. In hac habitasse platea dictumst. Maecenas non massa ut lectus iaculis vehicula ut.</span></a> and <a class="tooltip" href="https://courses.yale.edu/" target="_blank">CHEM 175<span class="tooltiptext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas sem nibh, eget vehicula nulla consequat a. Quisque consectetur a ante vel vehicula. Phasellus posuere risus sed odio sagittis, vitae tempus velit eleifend. Maecenas aliquam luctus orci, sit amet molestie arcu elementum id. Nunc tincidunt nunc id pharetra tempus. Vestibulum metus arcu, condimentum sit amet nibh id, sollicitudin faucibus leo. In hac habitasse platea dictumst. Maecenas non massa ut lectus iaculis vehicula ut.</span></a>, <a class="tooltip" href="https://courses.yale.edu/" target="_blank">221<span class="tooltiptext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas sem nibh, eget vehicula nulla consequat a. Quisque consectetur a ante vel vehicula. Phasellus posuere risus sed odio sagittis, vitae tempus velit eleifend. Maecenas aliquam luctus orci, sit amet molestie arcu elementum id. Nunc tincidunt nunc id pharetra tempus. Vestibulum metus arcu, condimentum sit amet nibh id, sollicitudin faucibus leo. In hac habitasse platea dictumst. Maecenas non massa ut lectus iaculis vehicula ut.</span></a>, or <a class="tooltip" href="https://courses.yale.edu/" target="_blank">230<span class="tooltiptext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas sem nibh, eget vehicula nulla consequat a. Quisque consectetur a ante vel vehicula. Phasellus posuere risus sed odio sagittis, vitae tempus velit eleifend. Maecenas aliquam luctus orci, sit amet molestie arcu elementum id. Nunc tincidunt nunc id pharetra tempus. Vestibulum metus arcu, condimentum sit amet nibh id, sollicitudin faucibus leo. In hac habitasse platea dictumst. Maecenas non massa ut lectus iaculis vehicula ut.</span></a>; <a class="tooltip" href="https://courses.yale.edu/" target="_blank">CHEM 222L<span class="tooltiptext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas sem nibh, eget vehicula nulla consequat a. Quisque consectetur a ante vel vehicula. Phasellus posuere risus sed odio sagittis, vitae tempus velit eleifend. Maecenas aliquam luctus orci, sit amet molestie arcu elementum id. Nunc tincidunt nunc id pharetra tempus. Vestibulum metus arcu, condimentum sit amet nibh id, sollicitudin faucibus leo. In hac habitasse platea dictumst. Maecenas non massa ut lectus iaculis vehicula ut.</span></a> and <a class="tooltip" href="https://courses.yale.edu/" target="_blank">223L<span class="tooltiptext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas sem nibh, eget vehicula nulla consequat a. Quisque consectetur a ante vel vehicula. Phasellus posuere risus sed odio sagittis, vitae tempus velit eleifend. Maecenas aliquam luctus orci, sit amet molestie arcu elementum id. Nunc tincidunt nunc id pharetra tempus. Vestibulum metus arcu, condimentum sit amet nibh id, sollicitudin faucibus leo. In hac habitasse platea dictumst. Maecenas non massa ut lectus iaculis vehicula ut.</span></a></td>
+			<td class="col4">Application by end of 5th term</td>
+		</tr>
+		<tr>
+			<td class="col1">Physical Chemistry (<a class="tooltip" href="https://courses.yale.edu/" target="_blank">CHEM 332<span class="tooltiptext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas sem nibh, eget vehicula nulla consequat a. Quisque consectetur a ante vel vehicula. Phasellus posuere risus sed odio sagittis, vitae tempus velit eleifend. Maecenas aliquam luctus orci, sit amet molestie arcu elementum id. Nunc tincidunt nunc id pharetra tempus. Vestibulum metus arcu, condimentum sit amet nibh id, sollicitudin faucibus leo. In hac habitasse platea dictumst. Maecenas non massa ut lectus iaculis vehicula ut.</span></a> or <a class="tooltip" href="https://courses.yale.edu/" target="_blank">328<span class="tooltiptext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas sem nibh, eget vehicula nulla consequat a. Quisque consectetur a ante vel vehicula. Phasellus posuere risus sed odio sagittis, vitae tempus velit eleifend. Maecenas aliquam luctus orci, sit amet molestie arcu elementum id. Nunc tincidunt nunc id pharetra tempus. Vestibulum metus arcu, condimentum sit amet nibh id, sollicitudin faucibus leo. In hac habitasse platea dictumst. Maecenas non massa ut lectus iaculis vehicula ut.</span></a>)</td>
+			<td class="col2 col3" colspan="2">2 Physical Chemistry courses and 1 Lab<br />
+			(<a class="tooltip" href="https://courses.yale.edu/" target="_blank">CHEM 332<span class="tooltiptext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas sem nibh, eget vehicula nulla consequat a. Quisque consectetur a ante vel vehicula. Phasellus posuere risus sed odio sagittis, vitae tempus velit eleifend. Maecenas aliquam luctus orci, sit amet molestie arcu elementum id. Nunc tincidunt nunc id pharetra tempus. Vestibulum metus arcu, condimentum sit amet nibh id, sollicitudin faucibus leo. In hac habitasse platea dictumst. Maecenas non massa ut lectus iaculis vehicula ut.</span></a> or <a class="tooltip" href="https://courses.yale.edu/" target="_blank">328<span class="tooltiptext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas sem nibh, eget vehicula nulla consequat a. Quisque consectetur a ante vel vehicula. Phasellus posuere risus sed odio sagittis, vitae tempus velit eleifend. Maecenas aliquam luctus orci, sit amet molestie arcu elementum id. Nunc tincidunt nunc id pharetra tempus. Vestibulum metus arcu, condimentum sit amet nibh id, sollicitudin faucibus leo. In hac habitasse platea dictumst. Maecenas non massa ut lectus iaculis vehicula ut.</span></a>; <a class="tooltip" href="https://courses.yale.edu/" target="_blank">CHEM 333<span class="tooltiptext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas sem nibh, eget vehicula nulla consequat a. Quisque consectetur a ante vel vehicula. Phasellus posuere risus sed odio sagittis, vitae tempus velit eleifend. Maecenas aliquam luctus orci, sit amet molestie arcu elementum id. Nunc tincidunt nunc id pharetra tempus. Vestibulum metus arcu, condimentum sit amet nibh id, sollicitudin faucibus leo. In hac habitasse platea dictumst. Maecenas non massa ut lectus iaculis vehicula ut.</span></a>; <a class="tooltip" href="https://courses.yale.edu/" target="_blank">CHEM 330L<span class="tooltiptext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas sem nibh, eget vehicula nulla consequat a. Quisque consectetur a ante vel vehicula. Phasellus posuere risus sed odio sagittis, vitae tempus velit eleifend. Maecenas aliquam luctus orci, sit amet molestie arcu elementum id. Nunc tincidunt nunc id pharetra tempus. Vestibulum metus arcu, condimentum sit amet nibh id, sollicitudin faucibus leo. In hac habitasse platea dictumst. Maecenas non massa ut lectus iaculis vehicula ut.</span></a>)</td>
+			<td class="col4">2 terms of <a class="tooltip" href="https://courses.yale.edu/" target="_blank">CHEM 490<span class="tooltiptext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas sem nibh, eget vehicula nulla consequat a. Quisque consectetur a ante vel vehicula. Phasellus posuere risus sed odio sagittis, vitae tempus velit eleifend. Maecenas aliquam luctus orci, sit amet molestie arcu elementum id. Nunc tincidunt nunc id pharetra tempus. Vestibulum metus arcu, condimentum sit amet nibh id, sollicitudin faucibus leo. In hac habitasse platea dictumst. Maecenas non massa ut lectus iaculis vehicula ut.</span></a> taken in 5th and 6th semesters</td>
+		</tr>
+		<tr>
+			<td class="col1 col2 col3" colspan="3">Inorganic Chemistry <a class="tooltip" href="https://courses.yale.edu/" target="_blank">CHEM 252<span class="tooltiptext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas sem nibh, eget vehicula nulla consequat a. Quisque consectetur a ante vel vehicula. Phasellus posuere risus sed odio sagittis, vitae tempus velit eleifend. Maecenas aliquam luctus orci, sit amet molestie arcu elementum id. Nunc tincidunt nunc id pharetra tempus. Vestibulum metus arcu, condimentum sit amet nibh id, sollicitudin faucibus leo. In hac habitasse platea dictumst. Maecenas non massa ut lectus iaculis vehicula ut.</span></a></td>
+			<td class="col4">Research between Jr/Sr year</td>
+		</tr>
+		<tr>
+			<td class="col1 col2" colspan="2">N/A</td>
+			<td class="col3"><a class="tooltip" href="https://courses.yale.edu/" target="_blank">PHYS 171<span class="tooltiptext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas sem nibh, eget vehicula nulla consequat a. Quisque consectetur a ante vel vehicula. Phasellus posuere risus sed odio sagittis, vitae tempus velit eleifend. Maecenas aliquam luctus orci, sit amet molestie arcu elementum id. Nunc tincidunt nunc id pharetra tempus. Vestibulum metus arcu, condimentum sit amet nibh id, sollicitudin faucibus leo. In hac habitasse platea dictumst. Maecenas non massa ut lectus iaculis vehicula ut.</span></a> or higher</td>
+			<td class="col4" rowspan="2">Advanced course credits include 8 grad courses<br />
+			(4 applied to the B.S.)</td>
+		</tr>
+		<tr>
+			<td class="col1 col2" colspan="2">4 additional advanced course credits, incl at least 1 lecture and 1 lab</td>
+			<td class="col3">5 additional advanced course credits, incl at least 2 lectures and 1 lab</td>
+		</tr>
+	</tbody>
+</table>
+<!-- END REQUIREMENTS FOR EACH DEGREE --><!-- SENIOR REQUIREMENTS -->
+
+<table>
+	<caption>Senior Requirements</caption>
+	<thead>
+		<tr>
+			<th colspan="4">
+			<table>
+				<tbody>
+					<tr>
+						<td colspan="4">
+						<h2 role="presentation">Senior Requirements</h2>
+
+						<div class="hover_control"><span class="hover_desc"></span><img role="button" tabindex="0" class="hover_on hover_state_on" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-on-25.png" alt="Turn hover descriptions on" /> <img role="button" tabindex="0" class="hover_off hover_state_off" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-off-25.png" alt="Turn hover descriptions off" /></div>
+						</td>
+					</tr>
+					<tr>
+						<td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. Chemistry</div></td>
+						<td role="columnheader" class="opt2"><div role="button" tabindex="0">B.S. Chemistry</div></td>
+						<td role="columnheader" class="opt3"><div role="button" tabindex="0">B.S. Chemistry<br />
+						(Intensive Major)</div></td>
+						<td role="columnheader" class="opt4"><div role="button" tabindex="0">B.S./M.S. Chemistry</div></td>
+					</tr>
+				</tbody>
+			</table>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="col1"><a class="tooltip" href="https://courses.yale.edu/" target="_blank">CHEM 400<span class="tooltiptext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas sem nibh, eget vehicula nulla consequat a. Quisque consectetur a ante vel vehicula. Phasellus posuere risus sed odio sagittis, vitae tempus velit eleifend. Maecenas aliquam luctus orci, sit amet molestie arcu elementum id. Nunc tincidunt nunc id pharetra tempus. Vestibulum metus arcu, condimentum sit amet nibh id, sollicitudin faucibus leo. In hac habitasse platea dictumst. Maecenas non massa ut lectus iaculis vehicula ut.</span></a></td>
+			<td class="col2"><a class="tooltip" href="https://courses.yale.edu/" target="_blank">CHEM 490<span class="tooltiptext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas sem nibh, eget vehicula nulla consequat a. Quisque consectetur a ante vel vehicula. Phasellus posuere risus sed odio sagittis, vitae tempus velit eleifend. Maecenas aliquam luctus orci, sit amet molestie arcu elementum id. Nunc tincidunt nunc id pharetra tempus. Vestibulum metus arcu, condimentum sit amet nibh id, sollicitudin faucibus leo. In hac habitasse platea dictumst. Maecenas non massa ut lectus iaculis vehicula ut.</span></a><br />
+			(2 semesters) or<br />
+			<a class="tooltip" href="https://courses.yale.edu/" target="_blank">CHEM 400<span class="tooltiptext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas sem nibh, eget vehicula nulla consequat a. Quisque consectetur a ante vel vehicula. Phasellus posuere risus sed odio sagittis, vitae tempus velit eleifend. Maecenas aliquam luctus orci, sit amet molestie arcu elementum id. Nunc tincidunt nunc id pharetra tempus. Vestibulum metus arcu, condimentum sit amet nibh id, sollicitudin faucibus leo. In hac habitasse platea dictumst. Maecenas non massa ut lectus iaculis vehicula ut.</span></a> and<br />
+			additional advanced</td>
+			<td class="col3"><a class="tooltip" href="https://courses.yale.edu/" target="_blank">CHEM 490<span class="tooltiptext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas sem nibh, eget vehicula nulla consequat a. Quisque consectetur a ante vel vehicula. Phasellus posuere risus sed odio sagittis, vitae tempus velit eleifend. Maecenas aliquam luctus orci, sit amet molestie arcu elementum id. Nunc tincidunt nunc id pharetra tempus. Vestibulum metus arcu, condimentum sit amet nibh id, sollicitudin faucibus leo. In hac habitasse platea dictumst. Maecenas non massa ut lectus iaculis vehicula ut.</span></a><br />
+			(2 semesters)</td>
+			<td class="col4">4 Research Semesters<br />
+			(incl 2 terms of <a class="tooltip" href="https://courses.yale.edu/" target="_blank">CHEM 990<span class="tooltiptext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas sem nibh, eget vehicula nulla consequat a. Quisque consectetur a ante vel vehicula. Phasellus posuere risus sed odio sagittis, vitae tempus velit eleifend. Maecenas aliquam luctus orci, sit amet molestie arcu elementum id. Nunc tincidunt nunc id pharetra tempus. Vestibulum metus arcu, condimentum sit amet nibh id, sollicitudin faucibus leo. In hac habitasse platea dictumst. Maecenas non massa ut lectus iaculis vehicula ut.</span></a>)</td>
+		</tr>
+	</tbody>
+</table>
+<!-- END SENIOR REQUIREMENTS --><!-- SUBSTITUTIONS -->
+
+<table>
+	<caption>Substitutions</caption>
+	<thead>
+		<tr>
+			<th colspan="4">
+			<table>
+				<tbody>
+					<tr>
+						<td colspan="4">
+						<h2 role="presentation">Substitutions</h2>
+
+						<div class="hover_control"><span class="hover_desc"></span><img role="button" tabindex="0" class="hover_on hover_state_on" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-on-25.png" alt="Turn hover descriptions on" /> <img role="button" tabindex="0" class="hover_off hover_state_off" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-off-25.png" alt="Turn hover descriptions off" /></div>
+						</td>
+					</tr>
+					<tr>
+						<td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. Chemistry</div></td>
+						<td role="columnheader" class="opt2"><div role="button" tabindex="0">B.S. Chemistry</div></td>
+						<td role="columnheader" class="opt3"><div role="button" tabindex="0">B.S. Chemistry<br />
+						(Intensive Major)</div></td>
+						<td role="columnheader" class="opt4"><div role="button" tabindex="0">B.S./M.S. Chemistry</div></td>
+					</tr>
+				</tbody>
+			</table>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="col1 col2 col3" colspan="3">Up to 2 credits of relevant advanced science courses in other departments for advanced chemistry courses (with DUS permission)</td>
+			<td class="col4">N/A</td>
+		</tr>
+	</tbody>
+</table>
+<!-- END SUBSTITUTIONS --></div>
+<!-- END TABLE WRAP -->
+
+<p>&nbsp;</p>
+</div>
