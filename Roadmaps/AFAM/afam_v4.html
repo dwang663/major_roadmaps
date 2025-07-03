@@ -317,9 +317,55 @@
 		}
 
 </style>
+<div id="debug" style="padding: 1em; background: #f0f0f0; font-family: monospace; border: 1px solid #ccc; margin-top: 1em;">
+    <strong>Debug Output:</strong><br>
+</div>      
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script><script type="text/javascript">
+
+var rawJson = `{
+  "PA 999": "Rotation: Elective I",
+  "AMST 2272": "Asian American History, 1800 to the Present",
+  "ER&M 2682": "Asian American History, 1800 to the Present",
+  "HIST 1183": "Asian American History, 1800 to the Present",
+  "WGSS 2272": "Asian American History, 1800 to the Present",
+  "AFAM 1160": "History of Atlantic Slavery",
+  "AMST 1160": "History of Atlantic Slavery",
+  "HIST 1784": "History of Atlantic Slavery",
+  "AFAM 2150": "History of Anti-Black Racism and Medicine",
+}`;
+var courseDescriptions = jQuery.parseJSON(rawJson); 
+
 // console.log('before jq');
 $(document).ready(function() {
+    var parsed = JSON.parse(rawJson);
+    var codeToDescription = {};
+
+    Object.keys(parsed).forEach(function (key) {
+    // Normalize course code keys (optional)
+    var normalizedKey = key.replace(/\s+/g, ' ').trim();
+    codeToDescription[normalizedKey] = parsed[key];
+    });
+
+    $("a.tooltip").each(function () {
+    const $link = $(this);
+    const code = $link
+        .contents()
+        .filter(function () {
+        return this.nodeType === 3 && this.nodeValue.trim().length > 0;
+        })
+        .text()
+        .replace(/\s+/g, ' ')
+        .trim();
+
+    const description = codeToDescription[code];
+
+    $("#debug").append(`Code: "${code}" → ${description ? "✅ Found" : "❌ Not found"}<br>`);
+
+    if (description) {
+        $link.find(".tooltiptext").text(description);
+    }
+    });
+
 	// console.log('after doc ready');
 	// Column highlights
 	if (!jQuery('#table_wrap').hasClass('columns-1')) {
@@ -407,6 +453,7 @@ console.log('end scripts');
 
 <div id="table_wrap" class="columns-1">
 
+
 <!-- PREREQUISITES FOR ENTERING THE MAJOR -->
 <table>
 <caption>Prerequisites for Entering the Major</caption>
@@ -423,7 +470,7 @@ console.log('end scripts');
 					</td>
 				</tr>
 				<tr>
-					<td role="columnheader" class="opt1"><div role="button" tabindex="0">BA African American Studies</div></td>
+					<td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. African American Studies</div></td>
 				</tr>
 			</tbody>
 		</table>
@@ -453,7 +500,7 @@ console.log('end scripts');
 					</td>
 				</tr>
 				<tr>
-					<td role="columnheader" class="opt1"><div role="button" tabindex="0">BA African American Studies</div></td>
+					<td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. African American Studies</div></td>
 				</tr>
 			</tbody>
 		</table>
@@ -465,7 +512,12 @@ console.log('end scripts');
 		<td>12 term courses (incl senior reqs)</td>
 	</tr>
 	<tr>
-		<td>AFAM 1160</td>
+		<td><a class="tooltip" href="https://courses.yale.edu/?keyword=AFAM%201160&srcdb=202503" target="_blank">
+			AFAM 1160
+			<span class="tooltiptext">
+				tooltiptextdefault
+			</span>
+		</a></td>
 	</tr>
 	<tr>
 		<td>AFAM 1162</td>
@@ -502,7 +554,7 @@ console.log('end scripts');
 					</td>
 				</tr>
 				<tr>
-					<td role="columnheader" class="opt1"><div role="button" tabindex="0">BA African American Studies</div></td>
+					<td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. African American Studies</div></td>
 				</tr>
 			</tbody>
 		</table>
@@ -537,7 +589,7 @@ console.log('end scripts');
 					</td>
 				</tr>
 				<tr>
-					<td role="columnheader" class="opt1"><div role="button" tabindex="0">DEGREE NAME</div></td>
+					<td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. African American Studies</div></td>
 				</tr>
 			</tbody>
 		</table>
@@ -557,5 +609,5 @@ console.log('end scripts');
 
 <p>&nbsp;</p>
 
-<hr />
+
 </div>
