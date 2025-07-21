@@ -189,7 +189,6 @@
 		padding: 6px 14px 8px;
 		position: absolute;
 		z-index: 3;
-		bottom: 125%;
 		left: 50%;
 		margin-left: -200px;
 		opacity: 0;
@@ -198,12 +197,10 @@
 	.tooltip .tooltiptext::after {
 		content: "";
 		position: absolute;
-		top: 100%;
 		left: 50%;
 		margin-left: -5px;
 		border-width: 5px;
 		border-style: solid;
-		border-color: #555 transparent transparent transparent;
 	}
 	.tooltip:hover .tooltiptext,
 	.tooltip:focus .tooltiptext {
@@ -213,6 +210,32 @@
 	.tooltip_off {
 		display: none;
 	}
+
+
+
+	.tooltiptext.top {
+		bottom: 125%;
+		top: auto;
+	}
+	.tooltiptext.top::after {
+		top: 100%;
+		bottom: auto;
+		border-color: #555 transparent transparent transparent;
+	}
+
+	/* Alternative bottom position */
+	.tooltiptext.bottom {
+		top: 125%;
+		bottom: auto;
+	}
+	.tooltiptext.bottom::after {
+		bottom: 100%;
+		top: auto;
+		border-color: transparent transparent #555 transparent;
+	}
+
+
+
 
 /* OUTCOMES */
 	#four_year_look {
@@ -319,6 +342,7 @@
 </style>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script><script type="text/javascript">
 // console.log('before jq');
+
 $(document).ready(function () {
     jQuery.getJSON("https://raw.githubusercontent.com/dwang663/major_roadmaps/main/data/cleaned_course_data.json", function (obj) {
         $("a.tooltip").each(function () {
@@ -334,8 +358,23 @@ $(document).ready(function () {
             }
         });
     });
-	// console.log('after doc ready');
-	// Column highlights
+
+    $(".tooltip").on("mouseenter", function () {
+		const $tooltip = $(this).find(".tooltiptext");
+		const elementTop = $(this).offset().top;
+		const scrollTop = $(window).scrollTop();
+		const screenHeight = $(window).height();
+
+		const elementPositionInViewport = elementTop - scrollTop;
+
+		if (elementPositionInViewport > screenHeight / 2) {
+			$tooltip.removeClass("bottom").addClass("top");
+		} else {
+			$tooltip.removeClass("top").addClass("bottom");
+		}
+	});
+
+
 	if (!jQuery('#table_wrap').hasClass('columns-1')) {
 		jQuery('.opt1, .opt2, .opt3, .opt4').click(function() {
 			if (jQuery(this).hasClass('opt1')) {
@@ -437,7 +476,7 @@ console.log('end scripts');
 					</td>
 				</tr>
 				<tr>
-					<td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. Ethnicity, Race, and Migration</div></td>
+					<td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. African American Studies</div></td>
 				</tr>
 			</tbody>
 		</table>
@@ -467,7 +506,7 @@ console.log('end scripts');
 					</td>
 				</tr>
 				<tr>
-					<td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. Ethnicity, Race, and Migration</div></td>
+					<td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. African American Studies</div></td>
 				</tr>
 			</tbody>
 		</table>
@@ -476,19 +515,27 @@ console.log('end scripts');
 </thead>
 <tbody>
 	<tr>
-		<td>12 term courses<br>
-            (incl senior req)</td>
+		<td>12 term courses (incl senior reqs)</td>
 	</tr>
-    <tr>
-        <td>ER&M 2000 and 3000</td>
-    </tr>
-    <tr>
-        <td>6 courses in area of interest,<br>
-            1 of which must be a methods course</td>
-    </tr>
-    <tr>
-        <td>2 electives with DUS approval</td>
-    </tr>
+	<tr>
+		<td><a class="tooltip" href="https://courses.yale.edu/?keyword=AFAM%201160&srcdb=202503" target="_blank">AFAM 1160<span class="tooltiptext">Course description not found</span></a></td>
+	</tr>
+	<tr>
+		<td><a class="tooltip" href="https://courses.yale.edu/?keyword=AFAM%201162&srcdb=202503" target="_blank">AFAM 1162<span class="tooltiptext">Course description not found</span></a></td>
+	</tr>
+	<tr>
+		<td>1 humanities course in African American literature, approved by DUS</td>
+	</tr>
+	<tr>
+		<td>1 social science course relevant to African American studies, approved by DUS</td>
+	</tr>
+	<tr>
+		<td>5 courses in area of focus, approved by DUS</td>
+	</tr>
+	<tr>
+		<td>Junior Seminar<br>
+			<a class="tooltip" href="https://courses.yale.edu/?keyword=AFAM%204310&srcdb=202503" target="_blank">AFAM 4310<span class="tooltiptext">Course description not found</span></a></td>
+	</tr>
 </tbody>
 </table>
 
@@ -508,7 +555,7 @@ console.log('end scripts');
 					</td>
 				</tr>
 				<tr>
-					<td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. Ethnicity, Race, and Migration</div></td>
+					<td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. African American Studies</div></td>
 				</tr>
 			</tbody>
 		</table>
@@ -517,18 +564,12 @@ console.log('end scripts');
 </thead>
 <tbody>
 	<tr>
-		<td>Senior Colloquium
-            (ER&M 4091)<br>
-            and<br>
-            Senior Essay or Project
-            (ER&M 4092)<br><br>
-            or<br><br>
-            Senior Essay in
-            upper-level seminar<br>
-            and<br>
-            one additional
-            upper-level seminar
-        </td>
+		<td>Senior Colloquium<br>
+			<a class="tooltip" href="https://courses.yale.edu/?keyword=AFAM%204380&srcdb=202503" target="_blank">AFAM 4380<span class="tooltiptext">Course description not found</span></a></td>
+	</tr>
+	<tr>
+		<td>Senior Essay<br>
+			<a class="tooltip" href="https://courses.yale.edu/?keyword=AFAM%204391&srcdb=202503" target="_blank">AFAM 4391<span class="tooltiptext">Course description not found</span></a></td>
 	</tr>
 </tbody>
 </table>
@@ -549,7 +590,7 @@ console.log('end scripts');
 					</td>
 				</tr>
 				<tr>
-					<td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. Ethnicity, Race, and Migration</div></td>
+					<td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. African American Studies</div></td>
 				</tr>
 			</tbody>
 		</table>
@@ -558,7 +599,7 @@ console.log('end scripts');
 </thead>
 <tbody>
 	<tr>
-		<td>None</td>
+		<td>Relevant course with permission of DUS</td>
 	</tr>
 </tbody>
 </table>
@@ -568,4 +609,5 @@ console.log('end scripts');
 <!-- END TABLE WRAP -->
 
 <p>&nbsp;</p>
+
 </div>

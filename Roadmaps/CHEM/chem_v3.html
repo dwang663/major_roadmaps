@@ -317,9 +317,9 @@
 
 </style>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script><script type="text/javascript">
-// console.log('before jq');
+
 $(document).ready(function () {
-    jQuery.getJSON("https://raw.githubusercontent.com/dwang663/major_roadmaps/main/data/cleaned_course_data.json", function (obj) {
+    jQuery.getJSON("https://raw.githubusercontent.com/dwang663/major_roadmaps/refs/heads/main/data/cleaned_course_data.json", function (obj) {
         $("a.tooltip").each(function () {
             const $link = $(this);
 
@@ -333,8 +333,7 @@ $(document).ready(function () {
             }
         });
     });
-    // console.log('after doc ready');
-    // Column highlights
+
     if (!jQuery('#table_wrap').hasClass('columns-1')) {
         jQuery('.opt1, .opt2, .opt3, .opt4').click(function() {
             if (jQuery(this).hasClass('opt1')) {
@@ -435,10 +434,10 @@ console.log('end scripts');
                     </td>
                 </tr>
                 <tr>
-                    <td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. Molecular, Cellular, and Developmental Biology</div></td>
-                    <td role="columnheader" class="opt2"><div role="button" tabindex="0">B.S. Molecular, Cellular, and Developmental Biology</div></td>
-                    <td role="columnheader" class="opt3"><div role="button" tabindex="0">B.S. Molecular, Cellular, and Developmental Biology<br>(Intensive Major)</div></td>
-                    <td role="columnheader" class="opt4"><div role="button" tabindex="0">B.S./M.S. Molecular, Cellular, and Developmental Biology</div></td>
+                    <td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. Chemistry</div></td>
+                    <td role="columnheader" class="opt2"><div role="button" tabindex="0">B.S. Chemistry</div></td>
+                    <td role="columnheader" class="opt3"><div role="button" tabindex="0">B.S. Chemistry<br>(Intensive Major)</div></td>
+                    <td role="columnheader" class="opt4"><div role="button" tabindex="0">B.S./M.S. Chemistry</div></td>
                 </tr>
             </tbody>
         </table>
@@ -447,26 +446,23 @@ console.log('end scripts');
 </thead>
 <tbody>
     <tr>
-        <td colspan="4" class="col1 col2 col3 col4">BIOL 1010, 1020, 1030, and 1040</td>
+        <td colspan="4" class="col1 col2 col3 col4"><a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%201610&srcdb=202503" target="_blank">CHEM 1610<span class="tooltiptext">Course description not found</span></a> and <a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%201650&srcdb=202503" target="_blank">CHEM 1650<span class="tooltiptext">Course description not found</span></a><br>
+        or<br>
+        <a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%201700&srcdb=202503" target="_blank">CHEM 1700<span class="tooltiptext">Course description not found</span></a> (<a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%201630&srcdb=202503" target="_blank">CHEM 1630<span class="tooltiptext">Course description not found</span></a> and <a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%201670&srcdb=202503" target="_blank">CHEM 1670<span class="tooltiptext">Course description not found</span></a> are not offered in AY 2025-2026);<br>
+        <a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%201340L&srcdb=202503" target="_blank">CHEM 1340L<span class="tooltiptext">Course description not found</span></a> and <a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%201360L&srcdb=202503" target="_blank">CHEM 1360L<span class="tooltiptext">Course description not found</span></a>, or <a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%201710L&srcdb=202503" target="_blank">CHEM 1710L<span class="tooltiptext">Course description not found</span></a>
+        </td>
     </tr>
     <tr>
-        <td colspan="4" class="col1 col2 col3 col4">1 course in MATH 1150 or higher<br>
-            or<br>
-            S&DS course at Yale (approved by DUS)</td>
+        <td colspan="4" class="col1 col2 col3 col4"><a class="tooltip" href="https://courses.yale.edu/?keyword=MATH%201150&srcdb=202503" target="_blank">MATH 1150<span class="tooltiptext">Course description not found</span></a> or <a class="tooltip" href="https://courses.yale.edu/?keyword=MATH%201160&srcdb=202503" target="_blank">MATH 1160<span class="tooltiptext">Course description not found</span></a> (<a class="tooltip" href="https://courses.yale.edu/?keyword=MATH%201200&srcdb=202503" target="_blank">MATH 1200<span class="tooltiptext">Course description not found</span></a> or <a class="tooltip" href="https://courses.yale.edu/?keyword=MATH%201210&srcdb=202503" target="_blank">MATH 1210<span class="tooltiptext">Course description not found</span></a> or <a class="tooltip" href="https://courses.yale.edu/?keyword=ENAS%201510&srcdb=202503" target="_blank">ENAS 1510<span class="tooltiptext">Course description not found</span></a> are encouraged)</td>
     </tr>
     <tr>
-        <td colspan="1" class="col1">2-term lecture sequence in
-            CHEM</td>
-        <td colspan="3" class="col2 col3 col4">2-term lecture sequence in CHEM + 2 Labs</td>
-    </tr>
-    <tr>
-        <td colspan="1" class="col1">1 term in PHYS 1700 or
-            higher</td>
-        <td colspan="3" class="col2 col3 col4">2 terms PHYS 1700 or higher</td>
-    </tr>
-    <tr>
-        <td colspan="1" class="col1">N/A</td>
-        <td colspan="3" class="col2 col3 col4">1 term organic CHEM + 1 Lab</td>
+        <td colspan="3" class="col1 col2 col3"><a class="tooltip" href="https://courses.yale.edu/?keyword=PHYS%201700&srcdb=202503" target="_blank">PHYS 1700<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=PHYS%201800&srcdb=202503" target="_blank">PHYS 1800<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=PHYS%202000&srcdb=202503" target="_blank">PHYS 2000<span class="tooltiptext">Course description not found</span></a>, or <a class="tooltip" href="https://courses.yale.edu/?keyword=PHYS%202600&srcdb=202503" target="_blank">PHYS 2600<span class="tooltiptext">Course description not found</span></a> or equivalents in advanced placement</td>
+        <td colspan="1" class="col4"><a class="tooltip" href="https://courses.yale.edu/?keyword=PHYS%202000&srcdb=202503" target="_blank">PHYS 2000<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=PHYS%202010&srcdb=202503" target="_blank">PHYS 2010<span class="tooltiptext">Course description not found</span></a><br>
+        or<br>
+        <a class="tooltip" href="https://courses.yale.edu/?keyword=PHYS%202600&srcdb=202503" target="_blank">PHYS 2600<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=PHYS%202610&srcdb=202503" target="_blank">PHYS 2610<span class="tooltiptext">Course description not found</span></a><br>
+        or<br>
+        <a class="tooltip" href="https://courses.yale.edu/?keyword=PHYS%204000&srcdb=202503" target="_blank">PHYS 4000<span class="tooltiptext">Course description not found</span></a> or higher<br>
+        (with DUS approval)</td>
     </tr>
 </tbody>
 </table>
@@ -487,10 +483,10 @@ console.log('end scripts');
                     </td>
                 </tr>
                 <tr>
-                    <td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. Molecular, Cellular, and Developmental Biology</div></td>
-                    <td role="columnheader" class="opt2"><div role="button" tabindex="0">B.S. Molecular, Cellular, and Developmental Biology</div></td>
-                    <td role="columnheader" class="opt3"><div role="button" tabindex="0">B.S. Molecular, Cellular, and Developmental Biology<br>(Intensive Major)</div></td>
-                    <td role="columnheader" class="opt4"><div role="button" tabindex="0">B.S./M.S. Molecular, Cellular, and Developmental Biology</div></td>
+                    <td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. Chemistry</div></td>
+                    <td role="columnheader" class="opt2"><div role="button" tabindex="0">B.S. Chemistry</div></td>
+                    <td role="columnheader" class="opt3"><div role="button" tabindex="0">B.S. Chemistry<br>(Intensive Major)</div></td>
+                    <td role="columnheader" class="opt4"><div role="button" tabindex="0">B.S./M.S. Chemistry</div></td>
                 </tr>
             </tbody>
         </table>
@@ -499,40 +495,38 @@ console.log('end scripts');
 </thead>
 <tbody>
     <tr>
-        <td colspan="1" class="col1">5.5 course credits<br>
-            beyond prereqs</td>
-        <td colspan="1" class="col2">9 course credits<br>
-            beyond prereqs</td>
-        <td colspan="1" class="col3">11 course credits<br>
-            beyond prereqs</td>
-        <td colspan="1" class="col4">14 course credits<br>
-            beyond prereqs</td>
+        <td colspan="1" class="col1">10 credits<br>(beyond prereqs)</td>
+        <td colspan="1" class="col2">13 credits<br>(beyond prereqs)</td>
+        <td colspan="1" class="col3">15 credits<br>(beyond prereqs)</td>
+        <td colspan="1" class="col4">19 credits<br>(beyond prereqs)<br>(B.S. Intensive requirements + 4 addtl grad courses)</td>
     </tr>
     <tr>
-        <td colspan="1" class="col1">2 core courses from<br>
-            MCDB 2000, 2020,
-            2050, 2100, 2900, 3000<br>
-            (or MB&B 3000)</td>
-        <td colspan="3" class="col2 col3 col4">3 core courses from<br>
-            MCDB 2000, 2020, 2050, 2100, 2900, 3000<br>
-            (or MB&B 3000)</td>
+        <td colspan="3" class="col1 col2 col3">2 terms Organic Chemistry (with Labs)<br>
+            <a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%201740&srcdb=202503" target="_blank">CHEM 1740<span class="tooltiptext">Course description not found</span></a> or <a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%202200&srcdb=202503" target="_blank">CHEM 2200<span class="tooltiptext">Course description not found</span></a>;<br>
+            <a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%201750&srcdb=202503" target="_blank">CHEM 1750<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%202210&srcdb=202503" target="_blank">CHEM 2210<span class="tooltiptext">Course description not found</span></a>, or <a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%202300&srcdb=202503" target="_blank">CHEM 2300<span class="tooltiptext">Course description not found</span></a>;<br>
+            <a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%202220L&srcdb=202503" target="_blank">CHEM 2220L<span class="tooltiptext">Course description not found</span></a> and <a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%202230L&srcdb=202503" target="_blank">CHEM 2230L<span class="tooltiptext">Course description not found</span></a></td>
+        <td colspan="1" class="col4">Application by end of 5th term</td>
     </tr>
     <tr>
-        <td colspan="1" class="col1">1 bioscience lab</td>
-        <td colspan="3" class="col2 col3 col4">2 MCDB labs</td>
+        <td colspan="3" class="col1 col2 col3">Physical Chemistry<br><a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%203320&srcdb=202503" target="_blank">CHEM 3320<span class="tooltiptext">Course description not found</span></a> or <a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%203280&srcdb=202503" target="_blank">CHEM 3280<span class="tooltiptext">Course description not found</span></a></td>
+        <td colspan="1" rowspan="2" class="col4">2 terms of <a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%204900&srcdb=202503" target="_blank">CHEM 4900<span class="tooltiptext">Course description not found</span></a> taken in 5th and 6th semesters</td>
     </tr>
     <tr>
-        <td colspan="3" class="col1 col2 col3">2 general elective MCDB courses numbered 2500 and above<br>
-            or<br>
-            2 additional core courses</td>
-        <td colspan="1" class="col4">4 graduate-level electives,<br>
-            one of which must be grad
-            seminar with DUS
-            approval</td>
+        <td colspan="1" class="col1">N/A</td>
+        <td colspan="2" class="col2 col3"><a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%203330&srcdb=202503" target="_blank">CHEM 3330<span class="tooltiptext">Course description not found</span></a>; <a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%203300L&srcdb=202503" target="_blank">CHEM 3300L<span class="tooltiptext">Course description not found</span></a></td>
     </tr>
     <tr>
-        <td colspan="3" class="col1 col2 col3">1 special elective from MCDB 3500 or higher</td>
-        <td colspan="1" class="col4">N/A</td>
+        <td colspan="3" class="col1 col2 col3">Inorganic Chemistry<br><a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%202520&srcdb=202503" target="_blank">CHEM 2520<span class="tooltiptext">Course description not found</span></a></td>
+        <td colspan="1" class="col4">Research between Jr/Sr year</td>
+    </tr>
+    <tr>
+        <td colspan="1" class="col1">N/A</td>
+        <td colspan="2" class="col2 col3">1 additional PHYS course numbered 1700 or higher</td>
+        <td colspan="1" rowspan="2" class="col4">Advanced course credits include 8 grad courses<br>(4 applied to the B.S.)</td>
+    </tr>
+    <tr>
+        <td colspan="1" class="col1">4 additional advanced course credits,<br>incl at least 1 lecture and 1 lab</td>
+        <td colspan="2" class="col2 col3">5 additional advanced course credits,<br>incl at least 2 lectures and 1 lab</td>
     </tr>
 </tbody>
 </table>
@@ -553,10 +547,10 @@ console.log('end scripts');
                     </td>
                 </tr>
                 <tr>
-                    <td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. Molecular, Cellular, and Developmental Biology</div></td>
-                    <td role="columnheader" class="opt2"><div role="button" tabindex="0">B.S. Molecular, Cellular, and Developmental Biology</div></td>
-                    <td role="columnheader" class="opt3"><div role="button" tabindex="0">B.S. Molecular, Cellular, and Developmental Biology<br>(Intensive Major)</div></td>
-                    <td role="columnheader" class="opt4"><div role="button" tabindex="0">B.S./M.S. Molecular, Cellular, and Developmental Biology</div></td>
+                    <td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. Chemistry</div></td>
+                    <td role="columnheader" class="opt2"><div role="button" tabindex="0">B.S. Chemistry</div></td>
+                    <td role="columnheader" class="opt3"><div role="button" tabindex="0">B.S. Chemistry<br>(Intensive Major)</div></td>
+                    <td role="columnheader" class="opt4"><div role="button" tabindex="0">B.S./M.S. Chemistry</div></td>
                 </tr>
             </tbody>
         </table>
@@ -565,76 +559,14 @@ console.log('end scripts');
 </thead>
 <tbody>
     <tr>
-        <td colspan="1" class="col1">Senior Essay<br>
-            or<br>
-            1 term of research in MCDB 4750</td>
-        <td colspan="1" class="col2">MCDB 4850, 4860</td>
-        <td colspan="1" class="col3">MCDB 4950, 4960</td>
-        <td colspan="1" class="col4">MCDB 5850<br>
-            (junior spring)<br>
-            MCDB 5950, 5960<br>
-            (senior year)<br>
-            (6 credits)</td>
+        <td colspan="1" class="col1"><a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%204000&srcdb=202503" target="_blank">CHEM 4000<span class="tooltiptext">Course description not found</span></a></td>
+        <td colspan="1" class="col2"><a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%204900&srcdb=202503" target="_blank">CHEM 4900<span class="tooltiptext">Course description not found</span></a><br>(2 semesters)<br>or<br><a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%204000&srcdb=202503" target="_blank">CHEM 4000<span class="tooltiptext">Course description not found</span></a> and additional advanced lecture or lab</td>
+        <td colspan="1" class="col3"><a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%204900&srcdb=202503" target="_blank">CHEM 4900<span class="tooltiptext">Course description not found</span></a><br>(2 semesters)</td>
+        <td colspan="1" class="col4">4 Research Semesters<br>(incl 2 terms of <a class="tooltip" href="https://courses.yale.edu/?keyword=CHEM%209900&srcdb=202503" target="_blank">CHEM 9900<span class="tooltiptext">Course description not found</span></a>)</td>
     </tr>
 </tbody>
 </table>
-
-<!-- CONCENTRATION REQUIREMENTS -->
-<table>
-    <caption>Concentration Requirements</caption>
-    <thead>
-        <tr>
-            <th colspan="4">
-            <table>
-                <tbody>
-                    <tr>
-                        <td colspan="4">
-                        <h2 role="presentation">Concentration Requirements</h2>
-    
-                        <div class="hover_control"><span class="hover_desc"></span><img role="button" tabindex="0" class="hover_on hover_state_on" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-on-25.png" alt="Turn hover descriptions on" /> <img role="button" tabindex="0" class="hover_off hover_state_off" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-off-25.png" alt="Turn hover descriptions off" /></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. Molecular, Cellular, and Developmental Biology</div></td>
-                        <td role="columnheader" class="opt2"><div role="button" tabindex="0">B.S. Molecular, Cellular, and Developmental Biology</div></td>
-                        <td role="columnheader" class="opt3"><div role="button" tabindex="0">B.S. Molecular, Cellular, and Developmental Biology<br>(Intensive Major)</div></td>
-                        <td role="columnheader" class="opt4"><div role="button" tabindex="0">B.S./M.S. Molecular, Cellular, and Developmental Biology</div></td>
-                    </tr>
-                </tbody>
-            </table>
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td colspan="4" class="col1 col2 col3 col4"><strong>Biotechnology</strong><br>
-                Same B.A. or B.S. requirements;<br>
-                MCDB 3700;<br>
-                1 elective from MCDB 3500 or higher;<br>
-                1 elective from MB&B 4200, 4430, BENG 3600, 3400, 4410, 4350, 4630, 4685,
-                CENG 2100, 4110, 4120L, CPSC 4381, 4391, 4700, or 4750</td>
-        </tr>
-        <tr>
-            <td colspan="4" class="col1 col2 col3 col4"><strong>Neurobiology</strong><br>
-                Same B.A. or B.S. requirements;<br>
-                MCDB 3200;<br>
-                1 elective from MCDB 3500 or higher;<br>
-                1 elective from BENG 4410, CPSC 4750, MCDB 2500, 3100, 3150, 3610, 4150, 4250, 4300, 4400,
-                PSYC 3376, or S&DS 1010</td>
-        </tr>
-        <tr>
-            <td colspan="4" class="col1 col2 col3 col4"><strong>Quantitative Biology</strong><br>
-                Same B.A. or B.S. requirements;<br>
-                MCDB 3310;<br>
-                1 elective from MCDB 3500 or higher;<br>
-                1 elective from MCDB 3200, 3610, 4610, BENG 4630, 4767, CPSC 4371, 4750,
-                MB&B 4350, 3520, 5230, PHYS 4020, MATH 2460, 2510, or CPSC 4750, 4371</td>
-        </tr>
-    </tbody>
-    </table>
-
-
-<!-- SUBSTITUTIONS -->
+<!-- END SENIOR REQUIREMENTS --><!-- SUBSTITUTIONS -->
 
 <table>
 <caption>Substitutions</caption>
@@ -651,10 +583,10 @@ console.log('end scripts');
                     </td>
                 </tr>
                 <tr>
-                    <td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. Molecular, Cellular, and Developmental Biology</div></td>
-                    <td role="columnheader" class="opt2"><div role="button" tabindex="0">B.S. Molecular, Cellular, and Developmental Biology</div></td>
-                    <td role="columnheader" class="opt3"><div role="button" tabindex="0">B.S. Molecular, Cellular, and Developmental Biology<br>(Intensive Major)</div></td>
-                    <td role="columnheader" class="opt4"><div role="button" tabindex="0">B.S./M.S. Molecular, Cellular, and Developmental Biology</div></td>
+                    <td role="columnheader" class="opt1"><div role="button" tabindex="0">B.A. Chemistry</div></td>
+                    <td role="columnheader" class="opt2"><div role="button" tabindex="0">B.S. Chemistry</div></td>
+                    <td role="columnheader" class="opt3"><div role="button" tabindex="0">B.S. Chemistry<br>(Intensive Major)</div></td>
+                    <td role="columnheader" class="opt4"><div role="button" tabindex="0">B.S./M.S. Chemistry</div></td>
                 </tr>
             </tbody>
         </table>
@@ -663,12 +595,12 @@ console.log('end scripts');
 </thead>
 <tbody>
     <tr>
-        <td colspan="4" class="col1 col2 col3 col4" colspan="3">None</td>
+        <td colspan="3" class="col1 col2 col3">Up to 2 credits of relevant advanced science courses in other departments for advanced chemistry courses<br>(with DUS permission)</td>
+        <td colspan="1" class="col4">N/A</td>
     </tr>
 </tbody>
 </table>
 <!-- END SUBSTITUTIONS --></div>
-
 <!-- END TABLE WRAP -->
 
 <p>&nbsp;</p>

@@ -315,7 +315,21 @@
 </style>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script><script type="text/javascript">
 // console.log('before jq');
-$(document).ready(function() {
+$(document).ready(function () {
+    jQuery.getJSON("https://raw.githubusercontent.com/dwang663/major_roadmaps/main/data/cleaned_course_data.json", function (obj) {
+        $("a.tooltip").each(function () {
+            const $link = $(this);
+
+            const code = $link.contents().filter(function () {
+                return this.nodeType === 3; 
+            }).text().trim();
+
+            const description = obj[code];
+            if (description) {
+                $link.find(".tooltiptext").text(description);
+            }
+        });
+    });
     // console.log('after doc ready');
     // Column highlights
     jQuery('.opt1, .opt2, .opt3, .opt4').click(function() {
@@ -426,9 +440,9 @@ console.log('end scripts');
 </thead>
 <tbody>
     <tr>
-        <td colspan="2" class="col1 col2">MATH 1200 or ENAS 1510;<br>
-            MATH 2220 or MATH 2250 or MATH 2260, or equivalents;<br>
-            ENAS 1300 or CPSC 1001</td>
+        <td colspan="2" class="col1 col2"><a class="tooltip" href="https://courses.yale.edu/?keyword=MATH%201200&srcdb=202503" target="_blank">MATH 1200<span class="tooltiptext">Course description not found</span></a> or <a class="tooltip" href="https://courses.yale.edu/?keyword=ENAS%201510&srcdb=202503" target="_blank">ENAS 1510<span class="tooltiptext">Course description not found</span></a>;<br>
+            <a class="tooltip" href="https://courses.yale.edu/?keyword=MATH%202220&srcdb=202503" target="_blank">MATH 2220<span class="tooltiptext">Course description not found</span></a> or <a class="tooltip" href="https://courses.yale.edu/?keyword=MATH%202250&srcdb=202503" target="_blank">MATH 2250<span class="tooltiptext">Course description not found</span></a> or <a class="tooltip" href="https://courses.yale.edu/?keyword=MATH%202260&srcdb=202503" target="_blank">MATH 2260<span class="tooltiptext">Course description not found</span></a>, or equivalents;<br>
+            <a class="tooltip" href="https://courses.yale.edu/?keyword=ENAS%201300&srcdb=202503" target="_blank">ENAS 1300<span class="tooltiptext">Course description not found</span></a> or <a class="tooltip" href="https://courses.yale.edu/?keyword=CPSC%201001&srcdb=202503" target="_blank">CPSC 1001<span class="tooltiptext">Course description not found</span></a></td>
     </tr>
 </tbody>
 </table>
@@ -466,22 +480,22 @@ console.log('end scripts');
     </tr>
     <tr>
         <td colspan="2" class="col1 col2">
-            1 differential equations course, ENAS 1940 or MATH 2460
+            1 differential equations course, <a class="tooltip" href="https://courses.yale.edu/?keyword=ENAS%201940&srcdb=202503" target="_blank">ENAS 1940<span class="tooltiptext">Course description not found</span></a> or <a class="tooltip" href="https://courses.yale.edu/?keyword=MATH%202460&srcdb=202503" target="_blank">MATH 2460<span class="tooltiptext">Course description not found</span></a>
         </td>
     </tr>
     <tr>
         <td colspan="2" class="col1 col2">
-            1 probability course, S&DS 2410 or S&DS 2380
+            1 probability course, <a class="tooltip" href="https://courses.yale.edu/?keyword=S&DS%202410&srcdb=202503" target="_blank">S&DS 2410<span class="tooltiptext">Course description not found</span></a> or <a class="tooltip" href="https://courses.yale.edu/?keyword=S&DS%202380&srcdb=202503" target="_blank">S&DS 2380<span class="tooltiptext">Course description not found</span></a>
         </td>
     </tr>
     <tr>
         <td colspan="2" class="col1 col2">
-            1 data analysis course, S&DS 3610 or S&DS 2300
+            1 data analysis course, <a class="tooltip" href="https://courses.yale.edu/?keyword=S&DS%203610&srcdb=202503" target="_blank">S&DS 3610<span class="tooltiptext">Course description not found</span></a> or <a class="tooltip" href="https://courses.yale.edu/?keyword=S&DS%202300&srcdb=202503" target="_blank">S&DS 2300<span class="tooltiptext">Course description not found</span></a>
         </td>
     </tr>
     <tr>
         <td colspan="2" class="col1 col2">
-            1 discrete mathematics course, AMTH 2440 or CPSC 2020
+            1 discrete mathematics course, <a class="tooltip" href="https://courses.yale.edu/?keyword=AMTH%202440&srcdb=202503" target="_blank">AMTH 2440<span class="tooltiptext">Course description not found</span></a> or <a class="tooltip" href="https://courses.yale.edu/?keyword=CPSC%202020&srcdb=202503" target="_blank">CPSC 2020<span class="tooltiptext">Course description not found</span></a>
         </td>
     </tr>
     <tr>
@@ -531,7 +545,7 @@ console.log('end scripts');
 <tbody>
     <tr>
         <td colspan="2" class="col1 col2">Senior thesis research project<br>
-            AMTH 4910</td>
+            <a class="tooltip" href="https://courses.yale.edu/?keyword=AMTH%204910&srcdb=202503" target="_blank">AMTH 4910<span class="tooltiptext">Course description not found</span></a></td>
     </tr>
 </tbody>
 </table>

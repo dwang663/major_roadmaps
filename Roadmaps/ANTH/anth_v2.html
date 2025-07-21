@@ -319,7 +319,21 @@
 </style>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script><script type="text/javascript">
 // console.log('before jq');
-$(document).ready(function() {
+$(document).ready(function () {
+    jQuery.getJSON("https://raw.githubusercontent.com/dwang663/major_roadmaps/main/data/cleaned_course_data.json", function (obj) {
+        $("a.tooltip").each(function () {
+            const $link = $(this);
+
+            const code = $link.contents().filter(function () {
+                return this.nodeType === 3; 
+            }).text().trim();
+
+            const description = obj[code];
+            if (description) {
+                $link.find(".tooltiptext").text(description);
+            }
+        });
+    });
 	// console.log('after doc ready');
 	// Column highlights
 	if (!jQuery('#table_wrap').hasClass('columns-1')) {
@@ -472,7 +486,7 @@ console.log('end scripts');
     </tr>
     <tr>
         <td>
-            At least 3 advanced (3000-4000 level) courses, not incl ANTH 4071, ANTH 4091, or seminar senior essay
+            At least 3 advanced (3000-4000 level) courses, not incl <a class="tooltip" href="https://courses.yale.edu/?keyword=ANTH%204071&srcdb=202503" target="_blank">ANTH 4071<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=ANTH%204091&srcdb=202503" target="_blank">ANTH 4091<span class="tooltiptext">Course description not found</span></a>, or seminar senior essay
         </td>
     </tr>
     <tr>
@@ -515,10 +529,10 @@ console.log('end scripts');
 <tbody>
 	<tr>
 		<td>One-term Senior Essay<br>
-            (in adv seminar or ANTH 4091)<br>
+            (in adv seminar or <a class="tooltip" href="https://courses.yale.edu/?keyword=ANTH%204091&srcdb=202503" target="_blank">ANTH 4091<span class="tooltiptext">Course description not found</span></a>)<br>
             OR<br>
             Two-term Senior Essay<br>
-            (ANTH 4071 and ANTH 4091)</td>
+            (<a class="tooltip" href="https://courses.yale.edu/?keyword=ANTH%204071&srcdb=202503" target="_blank">ANTH 4071<span class="tooltiptext">Course description not found</span></a> and <a class="tooltip" href="https://courses.yale.edu/?keyword=ANTH%204091&srcdb=202503" target="_blank">ANTH 4091<span class="tooltiptext">Course description not found</span></a>)</td>
 	</tr>
 </tbody>
 </table>

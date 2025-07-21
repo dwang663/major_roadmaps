@@ -315,7 +315,21 @@
 </style>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script><script type="text/javascript">
 // console.log('before jq');
-$(document).ready(function() {
+$(document).ready(function () {
+    jQuery.getJSON("https://raw.githubusercontent.com/dwang663/major_roadmaps/main/data/cleaned_course_data.json", function (obj) {
+        $("a.tooltip").each(function () {
+            const $link = $(this);
+
+            const code = $link.contents().filter(function () {
+                return this.nodeType === 3; 
+            }).text().trim();
+
+            const description = obj[code];
+            if (description) {
+                $link.find(".tooltiptext").text(description);
+            }
+        });
+    });
     // console.log('after doc ready');
     // Column highlights
     jQuery('.opt1, .opt2, .opt3, .opt4').click(function() {
@@ -426,7 +440,7 @@ console.log('end scripts');
 </thead>
 <tbody>
     <tr>
-        <td colspan="2" class="col1 col2">CGSC 1110</td>
+        <td colspan="2" class="col1 col2"><a class="tooltip" href="https://courses.yale.edu/?keyword=CGSC%201110&srcdb=202503" target="_blank">CGSC 1110<span class="tooltiptext">Course description not found</span></a></td>
     </tr>
 </tbody>
 </table>
@@ -461,27 +475,27 @@ console.log('end scripts');
             for a total of 13.5 course credits (including prereq and senior req)</td>
     </tr>
     <tr>
-        <td colspan="2" class="col1 col2">CGSC 3950 (.5 credit Junior colloquium)</td>
+        <td colspan="2" class="col1 col2"><a class="tooltip" href="https://courses.yale.edu/?keyword=CGSC%203950&srcdb=202503" target="_blank">CGSC 3950<span class="tooltiptext">Course description not found</span></a> (.5 credit Junior colloquium)</td>
     </tr>
     <tr>
         <td colspan="2" class="col1 col2">
             1 course from 4 of the following 6 subfields:<br>
-            Computer Science (CPSC 2010)<br>
-            Economics and Decision Making (ECON 2159)<br>
-            Linguistics (LING 1100, 1160, 1300, 1179, 2320, 2530)<br>
-            Neuroscience (MCDB 3200, NSCI 3400, PSYC 1600 or 2670)<br>
-            Philosophy (PHIL 1126, 1182, 2269, 2270, 2271)<br>
-            Psychology (PSYC 1100, S139E, 1400)</td>
+            Computer Science (<a class="tooltip" href="https://courses.yale.edu/?keyword=CPSC%202010&srcdb=202503" target="_blank">CPSC 2010<span class="tooltiptext">Course description not found</span></a>)<br>
+            Economics and Decision Making (<a class="tooltip" href="https://courses.yale.edu/?keyword=ECON%202159&srcdb=202503" target="_blank">ECON 2159<span class="tooltiptext">Course description not found</span></a>)<br>
+            Linguistics (<a class="tooltip" href="https://courses.yale.edu/?keyword=LING%201100&srcdb=202503" target="_blank">LING 1100<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=LING%201160&srcdb=202503" target="_blank">LING 1160<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=LING%201300&srcdb=202503" target="_blank">LING 1300<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=LING%201179&srcdb=202503" target="_blank">LING 1179<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=LING%202320&srcdb=202503" target="_blank">LING 2320<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=LING%202530&srcdb=202503" target="_blank">LING 2530<span class="tooltiptext">Course description not found</span></a>)<br>
+            Neuroscience (<a class="tooltip" href="https://courses.yale.edu/?keyword=MCDB%203200&srcdb=202503" target="_blank">MCDB 3200<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=NSCI%203400&srcdb=202503" target="_blank">NSCI 3400<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=PSYC%201600&srcdb=202503" target="_blank">PSYC 1600<span class="tooltiptext">Course description not found</span></a> or <a class="tooltip" href="https://courses.yale.edu/?keyword=PSYC%202670&srcdb=202503" target="_blank">PSYC 2670<span class="tooltiptext">Course description not found</span></a>)<br>
+            Philosophy (<a class="tooltip" href="https://courses.yale.edu/?keyword=PHIL%201126&srcdb=202503" target="_blank">PHIL 1126<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=PHIL%201182&srcdb=202503" target="_blank">PHIL 1182<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=PHIL%202269&srcdb=202503" target="_blank">PHIL 2269<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=PHIL%202270&srcdb=202503" target="_blank">PHIL 2270<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=PHIL%202271&srcdb=202503" target="_blank">PHIL 2271<span class="tooltiptext">Course description not found</span></a>)<br>
+            Psychology (<a class="tooltip" href="https://courses.yale.edu/?keyword=PSYC%201100&srcdb=202503" target="_blank">PSYC 1100<span class="tooltiptext">Course description not found</span></a>, PSYC S139E, <a class="tooltip" href="https://courses.yale.edu/?keyword=PSYC%201400&srcdb=202503" target="_blank">PSYC 1400<span class="tooltiptext">Course description not found</span></a>)</td>
     </tr>
     <tr>
         <td colspan="2" class="col1 col2">6 courses in a specific topic or area at 3000 or higher level</td>
     </tr>
     <tr>
         <td colspan="2" class="col1 col2">1 skills course<br>
-            (CPSC 1120, 2020, LING 2249, PSYC 2100, 2670,<br>
-            S&DS 1000, 1030, 1060, 2200, 2300, and S107E,<br>
+            (<a class="tooltip" href="https://courses.yale.edu/?keyword=CPSC%201120&srcdb=202503" target="_blank">CPSC 1120<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=CPSC%202020&srcdb=202503" target="_blank">CPSC 2020<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=LING%202249&srcdb=202503" target="_blank">LING 2249<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=PSYC%202100&srcdb=202503" target="_blank">PSYC 2100<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=PSYC%202670&srcdb=202503" target="_blank">PSYC 2670<span class="tooltiptext">Course description not found</span></a>,<br>
+            <a class="tooltip" href="https://courses.yale.edu/?keyword=S&DS%201000&srcdb=202503" target="_blank">S&DS 1000<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=S&DS%201030&srcdb=202503" target="_blank">S&DS 1030<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=S&DS%201060&srcdb=202503" target="_blank">S&DS 1060<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=S&DS%202200&srcdb=202503" target="_blank">S&DS 2200<span class="tooltiptext">Course description not found</span></a>, <a class="tooltip" href="https://courses.yale.edu/?keyword=S&DS%202300&srcdb=202503" target="_blank">S&DS 2300<span class="tooltiptext">Course description not found</span></a>, and S&DS S107E,<br>
             or another course with DUS permission);<br>
-            PSYC 2100 preferred for B.S. students</td>
+            <a class="tooltip" href="https://courses.yale.edu/?keyword=PSYC%202100&srcdb=202503" target="_blank">PSYC 2100<span class="tooltiptext">Course description not found</span></a> preferred for B.S. students</td>
     </tr>    
 </tbody>
 </table>
@@ -512,9 +526,9 @@ console.log('end scripts');
 </thead>
 <tbody>
     <tr>
-        <td colspan="1" class="col1">CGSC 4800 and 4810<br>
+        <td colspan="1" class="col1"><a class="tooltip" href="https://courses.yale.edu/?keyword=CGSC%204800&srcdb=202503" target="_blank">CGSC 4800<span class="tooltiptext">Course description not found</span></a> and <a class="tooltip" href="https://courses.yale.edu/?keyword=CGSC%204810&srcdb=202503" target="_blank">CGSC 4810<span class="tooltiptext">Course description not found</span></a><br>
             (Nonempirical senior essay)</td>
-        <td colspan="1" class="col2">CGSC 4900 and 4910<br>
+        <td colspan="1" class="col2"><a class="tooltip" href="https://courses.yale.edu/?keyword=CGSC%204900&srcdb=202503" target="_blank">CGSC 4900<span class="tooltiptext">Course description not found</span></a> and <a class="tooltip" href="https://courses.yale.edu/?keyword=CGSC%204910&srcdb=202503" target="_blank">CGSC 4910<span class="tooltiptext">Course description not found</span></a><br>
             (Empirical research<br>
             and senior essay)</td>
     </tr>

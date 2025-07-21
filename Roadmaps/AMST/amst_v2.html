@@ -315,7 +315,21 @@
 </style>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script><script type="text/javascript">
 // console.log('before jq');
-$(document).ready(function() {
+$(document).ready(function () {
+    jQuery.getJSON("https://raw.githubusercontent.com/dwang663/major_roadmaps/main/data/cleaned_course_data.json", function (obj) {
+        $("a.tooltip").each(function () {
+            const $link = $(this);
+
+            const code = $link.contents().filter(function () {
+                return this.nodeType === 3; 
+            }).text().trim();
+
+            const description = obj[code];
+            if (description) {
+                $link.find(".tooltiptext").text(description);
+            }
+        });
+    });
     // console.log('after doc ready');
     // Column highlights
     jQuery('.opt1, .opt2, .opt3, .opt4').click(function() {
@@ -518,10 +532,10 @@ console.log('end scripts');
             (AMST 4000-4999)<br>
             or<br>
             1 term senior project or essay<br>
-            (AMST 4491)</td>
+            (<a class="tooltip" href="https://courses.yale.edu/?keyword=AMST%204491&srcdb=202503" target="_blank">AMST 4491<span class="tooltiptext">Course description not found</span></a>)</td>
         <td colspan="1" class="col2">
             Independent Project<br>
-            (AMST 4493 and 4494)
+            (<a class="tooltip" href="https://courses.yale.edu/?keyword=AMST%204493&srcdb=202503" target="_blank">AMST 4493<span class="tooltiptext">Course description not found</span></a> and <a class="tooltip" href="https://courses.yale.edu/?keyword=AMST%204494&srcdb=202503" target="_blank">AMST 4494<span class="tooltiptext">Course description not found</span></a>)
         </td>
     </tr>
 </tbody>

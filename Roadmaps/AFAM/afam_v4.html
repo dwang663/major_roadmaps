@@ -336,7 +336,21 @@ var rawJson = `{
 var courseDescriptions = jQuery.parseJSON(rawJson); 
 
 // console.log('before jq');
-$(document).ready(function() {
+$(document).ready(function () {
+    jQuery.getJSON("https://raw.githubusercontent.com/dwang663/major_roadmaps/main/data/cleaned_course_data.json", function (obj) {
+        $("a.tooltip").each(function () {
+            const $link = $(this);
+
+            const code = $link.contents().filter(function () {
+                return this.nodeType === 3; 
+            }).text().trim();
+
+            const description = obj[code];
+            if (description) {
+                $link.find(".tooltiptext").text(description);
+            }
+        });
+    });
     var parsed = JSON.parse(rawJson);
     var codeToDescription = {};
 

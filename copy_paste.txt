@@ -3165,11 +3165,17 @@ var rawJson = `{
     var obj = jQuery.parseJSON(rawJson);
 
     $(document).ready(function () {
-    $("a.tooltip").each(function () {
-        const $link = $(this);
-        const code = $link.clone().children().remove().end().text().trim();
-        const description = obj[code];
-        if (description) {
-        $link.find(".tooltiptext").text(description);
-        }
+    jQuery.getJSON("https://raw.githubusercontent.com/dwang663/major_roadmaps/main/data/cleaned_course_data.json", function (obj) {
+        $("a.tooltip").each(function () {
+            const $link = $(this);
+
+            const code = $link.contents().filter(function () {
+                return this.nodeType === 3; 
+            }).text().trim();
+
+            const description = obj[code];
+            if (description) {
+                $link.find(".tooltiptext").text(description);
+            }
+        });
     });
