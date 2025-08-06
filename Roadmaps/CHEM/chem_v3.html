@@ -175,43 +175,63 @@
     }
 
 /* TOOL TIP */
-    .tooltip {
-        position: relative;
-        display: inline-block;
-    }
-    .tooltip .tooltiptext {
-        visibility: hidden;
-        width: 400px;
-        background-color: #555;
-        color: #fff;
-        border-radius: 6px;
-        padding: 6px 14px 8px;
-        position: absolute;
-        z-index: 3;
-        bottom: 125%;
-        left: 50%;
-        margin-left: -200px;
-        opacity: 0;
-        transition: opacity 0.3s;
-    }
-    .tooltip .tooltiptext::after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        margin-left: -5px;
-        border-width: 5px;
-        border-style: solid;
-        border-color: #555 transparent transparent transparent;
-    }
-    .tooltip:hover .tooltiptext,
-    .tooltip:focus .tooltiptext {
-        visibility: visible;
-        opacity: 1;
-    }
-    .tooltip_off {
-        display: none;
-    }
+	.tooltip {
+		position: relative;
+		display: inline-block;
+	}
+	.tooltip .tooltiptext {
+		visibility: hidden;
+		width: 400px;
+		background-color: #555;
+		color: #fff;
+		border-radius: 6px;
+		padding: 6px 14px 8px;
+		position: absolute;
+		z-index: 3;
+		left: 50%;
+		margin-left: -200px;
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
+	.tooltip .tooltiptext::after {
+		content: "";
+		position: absolute;
+		left: 50%;
+		margin-left: -5px;
+		border-width: 5px;
+		border-style: solid;
+	}
+	.tooltip:hover .tooltiptext,
+	.tooltip:focus .tooltiptext {
+		visibility: visible;
+		opacity: 1;
+	}
+	.tooltip_off {
+		display: none;
+	}
+
+
+
+	.tooltiptext.top {
+		bottom: 125%;
+		top: auto;
+	}
+	.tooltiptext.top::after {
+		top: 100%;
+		bottom: auto;
+		border-color: #555 transparent transparent transparent;
+	}
+
+	/* Alternative bottom position */
+	.tooltiptext.bottom {
+		top: 125%;
+		bottom: auto;
+	}
+	.tooltiptext.bottom::after {
+		bottom: 100%;
+		top: auto;
+		border-color: transparent transparent #555 transparent;
+	}
 
 /* OUTCOMES */
     #four_year_look {
@@ -333,6 +353,21 @@ $(document).ready(function () {
             }
         });
     });
+
+    $(".tooltip").on("mouseenter", function () {
+		const $tooltip = $(this).find(".tooltiptext");
+		const elementTop = $(this).offset().top;
+		const scrollTop = $(window).scrollTop();
+		const screenHeight = $(window).height();
+
+		const elementPositionInViewport = elementTop - scrollTop;
+
+		if (elementPositionInViewport > screenHeight / 2) {
+			$tooltip.removeClass("bottom").addClass("top");
+		} else {
+			$tooltip.removeClass("top").addClass("bottom");
+		}
+	});
 
     if (!jQuery('#table_wrap').hasClass('columns-1')) {
         jQuery('.opt1, .opt2, .opt3, .opt4').click(function() {
@@ -604,4 +639,34 @@ console.log('end scripts');
 <!-- END TABLE WRAP -->
 
 <p>&nbsp;</p>
+
+<hr />
+<h2 role="presentation">Career Outcomes</h2>
+
+<h3>Yale College First Destinations</h3>
+
+<p>First destination refers to the postgraduate plans of Yale College graduates six months after graduation. The pursuits of Yale graduates include employment, graduate school, independent research, military service, and more.</p>
+<!-- <h3>Yale College Four-Year Look</h3>
+	<p>The four-year look refers to the postgraduate plans of Yale College graduates four years after graduation. The pursuits of Yale graduates include employment, graduate school, independent research, military service, and more.</p> --><!-- <div id="outcomes_tabs">
+		<p><a href="https://ocs.yale.edu/outcomes/#!Chemistry" target="_blank"><input type="button" value="First Desitinations →"></a></p>
+		<p><a href="https://ocs.yale.edu/four-year-look/#!Chemistry" target="_blank"><input type="button" value="Four-Year Look →"></a></p>
+	</div> -->
+
+<div id="four_year_look"><!-- uConnect ODV: Start -->
+<div id="uconnect-odv-root">&nbsp;</div>
+<script>
+		(function(w, d, s, src, id, o) {
+		    w[o]=w[o]||{};w[o].odv=w[o].odv || function () { (w[o].odv.q = w[o].odv.q || []).push(arguments) };
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = src;
+			fjs.parentNode.insertBefore(js, fjs);
+		}(window, document, "script", "//cdn.uconnectlabs.com/wp-content/mu-plugins/uconnect/modules/outcome-data-visualization/assets/js/odv-embed.js?v=1.12", "uc_odv_js", "uconnect" ));
+		uconnect.odv("init", {instance: "https://ocs.yale.edu/outcomes/embedded/", program: "Chemistry"});
+		</script><!-- uConnect ODV: End --></div>
+
+<div id="utility">
+</div>
+
 </div>
