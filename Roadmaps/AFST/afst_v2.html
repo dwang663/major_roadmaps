@@ -337,7 +337,7 @@
 </style>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script><script type="text/javascript">
 
-    $(document).ready(function () {
+$(document).ready(function () {
     jQuery.getJSON("https://raw.githubusercontent.com/dwang663/major_roadmaps/main/data/cleaned_course_data.json", function (obj) {
         $("a.tooltip").each(function () {
             const $link = $(this);
@@ -352,6 +352,21 @@
             }
         });
     });
+
+    $(".tooltip").on("mouseenter", function () {
+		const $tooltip = $(this).find(".tooltiptext");
+		const elementTop = $(this).offset().top;
+		const scrollTop = $(window).scrollTop();
+		const screenHeight = $(window).height();
+
+		const elementPositionInViewport = elementTop - scrollTop;
+
+		if (elementPositionInViewport > screenHeight / 2) {
+			$tooltip.removeClass("bottom").addClass("top");
+		} else {
+			$tooltip.removeClass("top").addClass("bottom");
+		}
+	});
 	
 	if (!jQuery('#table_wrap').hasClass('columns-1')) {
 		jQuery('.opt1, .opt2, .opt3, .opt4').click(function() {

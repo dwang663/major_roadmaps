@@ -339,7 +339,7 @@
 // console.log('before jq');
 
 $(document).ready(function () {
-    jQuery.getJSON("http://files.cipe.yale.edu.s3.amazonaws.com/roadmaps/cleaned_course_data.json", function (obj) {
+    jQuery.getJSON("https://raw.githubusercontent.com/dwang663/major_roadmaps/main/data/cleaned_course_data.json", function (obj) {
         $("a.tooltip").each(function () {
             const $link = $(this);
 

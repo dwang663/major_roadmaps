@@ -352,8 +352,22 @@ $(document).ready(function () {
             }
         });
     });
-	// console.log('after doc ready');
-	// Column highlights
+
+    $(".tooltip").on("mouseenter", function () {
+		const $tooltip = $(this).find(".tooltiptext");
+		const elementTop = $(this).offset().top;
+		const scrollTop = $(window).scrollTop();
+		const screenHeight = $(window).height();
+
+		const elementPositionInViewport = elementTop - scrollTop;
+
+		if (elementPositionInViewport > screenHeight / 2) {
+			$tooltip.removeClass("bottom").addClass("top");
+		} else {
+			$tooltip.removeClass("top").addClass("bottom");
+		}
+	});
+	
 	if (!jQuery('#table_wrap').hasClass('columns-1')) {
 		jQuery('.opt1, .opt2, .opt3, .opt4').click(function() {
 			if (jQuery(this).hasClass('opt1')) {
