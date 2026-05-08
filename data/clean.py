@@ -1,7 +1,14 @@
 import json
 import re
 
+# set maximum word limit for descriptions
 WORD_LIMIT = 50
+
+# where to retrieve raw data copied from coursetable catalog
+before = "2026_course_data.json"
+
+# where to save cleaned data
+after = "2026_cleaned_course_data.json"
 
 def clean_text(value):
     value = re.sub(r'\\u[0-9a-fA-F]{4}', '', value)
@@ -17,9 +24,6 @@ def truncate_to_n_words(text, n):
     if len(words) > n:
         return ' '.join(words[:n]) + '...'
     return text
-
-before = "2026_course_data.json"
-after = "2026_cleaned_course_data.json"
 
 with open(before, "r", encoding="utf-8") as f:
     text = json.load(f)
