@@ -170,6 +170,9 @@
 			/* cursor: url('https://dev.finlit.yale.edu/sites/default/files/images/close_cursor_2.png') 10 10, auto;*/
 			cursor: image-set(url('https://dev.finlit.yale.edu/sites/default/files/images/circle-xmark-solid-15.png') 1x, url('https://dev.finlit.yale.edu/sites/default/files/images/circle-xmark-solid-30.png') 2x), auto;
 		}
+		#table_wrap.columns-1 .opt1:hover {
+			background: #eee !important;
+		}
 
 	/* TOOL TIP */
 		.tooltip {
@@ -345,49 +348,51 @@ $(document).ready(function () {
 			$tooltip.removeClass("top").addClass("bottom");
 		}
 	});
-		jQuery('.opt1, .opt2, .opt3, .opt4').click(function() {
-			if (jQuery(this).hasClass('opt1')) {
-				if (jQuery(this).hasClass('opt_select')) {
-					jQuery('.col1, .col2, .col3, .col4').removeClass('col_select');
-					jQuery('.opt1, .opt2, .opt3, .opt4').removeClass('opt_select');
-				} else {
-					jQuery('.col2, .col3, .col4').removeClass('col_select');
-					jQuery('.opt2, .opt3, .opt4').removeClass('opt_select');
-					jQuery('.col1').addClass('col_select');
-					jQuery('.opt1').addClass('opt_select');
+		if (!jQuery('#table_wrap').hasClass('columns-1')) {
+			jQuery('.opt1, .opt2, .opt3, .opt4').click(function() {
+				if (jQuery(this).hasClass('opt1')) {
+					if (jQuery(this).hasClass('opt_select')) {
+						jQuery('.col1, .col2, .col3, .col4').removeClass('col_select');
+						jQuery('.opt1, .opt2, .opt3, .opt4').removeClass('opt_select');
+					} else {
+						jQuery('.col2, .col3, .col4').removeClass('col_select');
+						jQuery('.opt2, .opt3, .opt4').removeClass('opt_select');
+						jQuery('.col1').addClass('col_select');
+						jQuery('.opt1').addClass('opt_select');
+					}
+				} else if (jQuery(this).hasClass('opt2')) {
+					if (jQuery(this).hasClass('opt_select')) {
+						jQuery('.col1, .col2, .col3, .col4').removeClass('col_select');
+						jQuery('.opt1, .opt2, .opt3, .opt4').removeClass('opt_select');
+					} else {
+						jQuery('.col1, .col3, .col4').removeClass('col_select');
+						jQuery('.opt1, .opt3, .opt4').removeClass('opt_select');
+						jQuery('.col2').addClass('col_select');
+						jQuery('.opt2').addClass('opt_select');
+					}
+				} else if (jQuery(this).hasClass('opt3')) {
+					if (jQuery(this).hasClass('opt_select')) {
+						jQuery('.col1, .col2, .col3, .col4').removeClass('col_select');
+						jQuery('.opt1, .opt2, .opt3, .opt4').removeClass('opt_select');
+					} else {
+						jQuery('.col1, .col2, .col4').removeClass('col_select');
+						jQuery('.opt1, .opt2, .opt4').removeClass('opt_select');
+						jQuery('.col3').addClass('col_select');
+						jQuery('.opt3').addClass('opt_select');
+					}
+				} else if (jQuery(this).hasClass('opt4')) {
+					if (jQuery(this).hasClass('opt_select')) {
+						jQuery('.col1, .col2, .col3, .col4').removeClass('col_select');
+						jQuery('.opt1, .opt2, .opt3, .opt4').removeClass('opt_select');
+					} else {
+						jQuery('.col1, .col2, .col3').removeClass('col_select');
+						jQuery('.opt1, .opt2, .opt3').removeClass('opt_select');
+						jQuery('.col4').addClass('col_select');
+						jQuery('.opt4').addClass('opt_select');
+					}
 				}
-			} else if (jQuery(this).hasClass('opt2')) {
-				if (jQuery(this).hasClass('opt_select')) {
-					jQuery('.col1, .col2, .col3, .col4').removeClass('col_select');
-					jQuery('.opt1, .opt2, .opt3, .opt4').removeClass('opt_select');
-				} else {
-					jQuery('.col1, .col3, .col4').removeClass('col_select');
-					jQuery('.opt1, .opt3, .opt4').removeClass('opt_select');
-					jQuery('.col2').addClass('col_select');
-					jQuery('.opt2').addClass('opt_select');
-				}
-			} else if (jQuery(this).hasClass('opt3')) {
-				if (jQuery(this).hasClass('opt_select')) {
-					jQuery('.col1, .col2, .col3, .col4').removeClass('col_select');
-					jQuery('.opt1, .opt2, .opt3, .opt4').removeClass('opt_select');
-				} else {
-					jQuery('.col1, .col2, .col4').removeClass('col_select');
-					jQuery('.opt1, .opt2, .opt4').removeClass('opt_select');
-					jQuery('.col3').addClass('col_select');
-					jQuery('.opt3').addClass('opt_select');
-				}
-			} else if (jQuery(this).hasClass('opt4')) {
-				if (jQuery(this).hasClass('opt_select')) {
-					jQuery('.col1, .col2, .col3, .col4').removeClass('col_select');
-					jQuery('.opt1, .opt2, .opt3, .opt4').removeClass('opt_select');
-				} else {
-					jQuery('.col1, .col2, .col3').removeClass('col_select');
-					jQuery('.opt1, .opt2, .opt3').removeClass('opt_select');
-					jQuery('.col4').addClass('col_select');
-					jQuery('.opt4').addClass('opt_select');
-				}
-			}
-		});
+			});
+		}
 
 		// Hover control
 		jQuery('.hover_control img').click(function() {
@@ -426,25 +431,27 @@ console.log('end scripts');
 </script>
 <div id="roadmap_wrap">
 
-<div id="table_wrap" class="columns-2">
+<div id="table_wrap" class="columns-4">
 <!-- PREREQUISITES FOR ENTERING THE MAJOR -->
 <table>
 	<caption>Prerequisites for Entering the Major</caption>
 	<thead>
 		<tr>
-			<th colspan="2">
+			<th colspan="4">
 			<table>
 				<tbody>
 					<tr>
-						<td colspan="2">
+						<td colspan="4">
 						<h2 role="presentation">Prerequisites for Entering the Major</h2>
 
-						<div class="hover_control"><span class="hover_desc"></span><img role="button" tabindex="0" class="hover_on hover_state_on" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-on-25.png" alt="Turn hover descriptions on" /> <img role="button" tabindex="0" class="hover_off hover_state_off" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-off-25.png" alt="Turn hover descriptions off" /></div>
+						<div class="hover_control"><span class="hover_desc"></span><img role="button" tabindex="0" class="hover_on hover_state_on" src="/sites/default/files/uploads/hover-on-25.png" alt="Turn hover descriptions on" /> <img role="button" tabindex="0" class="hover_off hover_state_off" src="/sites/default/files/uploads/hover-off-25.png" alt="Turn hover descriptions off" /></div>
 						</td>
 					</tr>
 					<tr>
 						<td role="columnheader" class="opt1"><div role="button" tabindex="0">DEGREE1</div></td>
 						<td role="columnheader" class="opt2"><div role="button" tabindex="0">DEGREE2</div></td>
+						<td role="columnheader" class="opt3"><div role="button" tabindex="0">DEGREE3</div></td>
+						<td role="columnheader" class="opt4"><div role="button" tabindex="0">DEGREE4</div></td>
 					</tr>
 				</tbody>
 			</table>
@@ -453,29 +460,31 @@ console.log('end scripts');
 	</thead>
 	<tbody>
 		<tr>
-			<td colspan="2" class="col1 col2">EXAMPLE</td>
+			<td colspan="4" class="col1 col2 col3 col4">EXAMPLE</td>
 		</tr>
 	</tbody>
 </table>
+<!-- END PREREQUISITES FOR ENTERING THE MAJOR --><!-- REQUIREMENTS FOR EACH DEGREE -->
 
-<!-- END PREREQUIREMENTS FOR ENTERING THE MAJOR --><!-- REQUIREMENTS FOR EACH DEGREE -->
 <table>
 	<caption>Requirements for Each Degree</caption>
 	<thead>
 		<tr>
-			<th colspan="2">
+			<th colspan="4">
 			<table>
 				<tbody>
 					<tr>
-						<td colspan="2">
+						<td colspan="4">
 						<h2 role="presentation">Requirements for Each Degree</h2>
 
-						<div class="hover_control"><span class="hover_desc"></span><img role="button" tabindex="0" class="hover_on hover_state_on" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-on-25.png" alt="Turn hover descriptions on" /> <img role="button" tabindex="0" class="hover_off hover_state_off" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-off-25.png" alt="Turn hover descriptions off" /></div>
+						<div class="hover_control"><span class="hover_desc"></span><img role="button" tabindex="0" class="hover_on hover_state_on" src="/sites/default/files/uploads/hover-on-25.png" alt="Turn hover descriptions on" /> <img role="button" tabindex="0" class="hover_off hover_state_off" src="/sites/default/files/uploads/hover-off-25.png" alt="Turn hover descriptions off" /></div>
 						</td>
 					</tr>
 					<tr>
 						<td role="columnheader" class="opt1"><div role="button" tabindex="0">DEGREE1</div></td>
 						<td role="columnheader" class="opt2"><div role="button" tabindex="0">DEGREE2</div></td>
+						<td role="columnheader" class="opt3"><div role="button" tabindex="0">DEGREE3</div></td>
+						<td role="columnheader" class="opt4"><div role="button" tabindex="0">DEGREE4</div></td>
 					</tr>
 				</tbody>
 			</table>
@@ -484,29 +493,31 @@ console.log('end scripts');
 	</thead>
 	<tbody>
 		<tr>
-			<td colspan="2" class="col1 col2">EXAMPLE</td>
+			<td colspan="4" class="col1 col2 col3 col4">EXAMPLE</td>
 		</tr>
 	</tbody>
 </table>
-
 <!-- END REQUIREMENTS FOR EACH DEGREE --><!-- SENIOR REQUIREMENTS -->
+
 <table>
 	<caption>Senior Requirements</caption>
 	<thead>
 		<tr>
-			<th colspan="2">
+			<th colspan="4">
 			<table>
 				<tbody>
 					<tr>
-						<td colspan="2">
+						<td colspan="4">
 						<h2 role="presentation">Senior Requirements</h2>
 
-						<div class="hover_control"><span class="hover_desc"></span><img role="button" tabindex="0" class="hover_on hover_state_on" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-on-25.png" alt="Turn hover descriptions on" /> <img role="button" tabindex="0" class="hover_off hover_state_off" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-off-25.png" alt="Turn hover descriptions off" /></div>
+						<div class="hover_control"><span class="hover_desc"></span><img role="button" tabindex="0" class="hover_on hover_state_on" src="/sites/default/files/uploads/hover-on-25.png" alt="Turn hover descriptions on" /> <img role="button" tabindex="0" class="hover_off hover_state_off" src="/sites/default/files/uploads/hover-off-25.png" alt="Turn hover descriptions off" /></div>
 						</td>
 					</tr>
 					<tr>
 						<td role="columnheader" class="opt1"><div role="button" tabindex="0">DEGREE1</div></td>
 						<td role="columnheader" class="opt2"><div role="button" tabindex="0">DEGREE2</div></td>
+						<td role="columnheader" class="opt3"><div role="button" tabindex="0">DEGREE3</div></td>
+						<td role="columnheader" class="opt4"><div role="button" tabindex="0">DEGREE4</div></td>
 					</tr>
 				</tbody>
 			</table>
@@ -515,29 +526,31 @@ console.log('end scripts');
 	</thead>
 	<tbody>
 		<tr>
-			<td colspan="2" class="col1 col2">EXAMPLE</td>
+			<td colspan="4" class="col1 col2 col3 col4">EXAMPLE</td>
 		</tr>
 	</tbody>
 </table>
+<!-- END SENIOR REQUIREMENTS --><!-- SUBSTITUTIONS -->
 
-<!-- SENIOR REQUIREMENTS --><!-- SUBSTITUTIONS -->
 <table>
 	<caption>Substitutions</caption>
 	<thead>
 		<tr>
-			<th colspan="2">
+			<th colspan="4">
 			<table>
 				<tbody>
 					<tr>
-						<td colspan="2">
+						<td colspan="4">
 						<h2 role="presentation">Substitutions</h2>
 
-						<div class="hover_control"><span class="hover_desc"></span><img role="button" tabindex="0" class="hover_on hover_state_on" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-on-25.png" alt="Turn hover descriptions on" /> <img role="button" tabindex="0" class="hover_off hover_state_off" src="https://dev.finlit.yale.edu/sites/default/files/images/hover-off-25.png" alt="Turn hover descriptions off" /></div>
+						<div class="hover_control"><span class="hover_desc"></span><img role="button" tabindex="0" class="hover_on hover_state_on" src="/sites/default/files/uploads/hover-on-25.png" alt="Turn hover descriptions on" /> <img role="button" tabindex="0" class="hover_off hover_state_off" src="/sites/default/files/uploads/hover-off-25.png" alt="Turn hover descriptions off" /></div>
 						</td>
 					</tr>
 					<tr>
 						<td role="columnheader" class="opt1"><div role="button" tabindex="0">DEGREE1</div></td>
 						<td role="columnheader" class="opt2"><div role="button" tabindex="0">DEGREE2</div></td>
+						<td role="columnheader" class="opt3"><div role="button" tabindex="0">DEGREE3</div></td>
+						<td role="columnheader" class="opt4"><div role="button" tabindex="0">DEGREE4</div></td>
 					</tr>
 				</tbody>
 			</table>
@@ -546,12 +559,11 @@ console.log('end scripts');
 	</thead>
 	<tbody>
 		<tr>
-			<td colspan="2" class="col1 col2">EXAMPLE</td>
+			<td colspan="4" class="col1 col2 col3 col4">EXAMPLE</td>
 		</tr>
 	</tbody>
 </table>
-
-</div>
+<!-- END SUBSTITUTIONS --></div>
 <!-- END TABLE WRAP -->
 
 <p>&nbsp;</p>
