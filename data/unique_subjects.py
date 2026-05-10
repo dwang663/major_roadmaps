@@ -1,7 +1,13 @@
 import json
 import re
 
-with open("./data/cleaned_course_data.json", "r", encoding="utf-8") as f:
+# where to retrieve cleaned course data
+data = "2026_cleaned_course_data.json"
+
+# where to save unique subjects list
+output = "subjects_list.json"
+
+with open(data, "r", encoding="utf-8") as f:
     data = json.load(f)
 
 subjects = set()
@@ -13,5 +19,5 @@ for course_code in data.keys():
 
 sorted_subjects = sorted(subjects)
 
-with open("./data/subjects_list.json", "w", encoding="utf-8") as f:
+with open(output, "w", encoding="utf-8") as f:
     json.dump(sorted_subjects, f, indent=2, ensure_ascii=False)
