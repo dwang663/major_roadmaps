@@ -16,7 +16,7 @@ def clean_text(value):
     value = value.replace('\u00a0', ' ')
     value = ''.join(c for c in value if c.isprintable())
     value = re.sub(r'\s+', ' ', value).strip()
-    value = value.replace('"', '\\"')
+    # value = value.replace('"', '\\"')
     return value
 
 def truncate_to_n_words(text, n):
